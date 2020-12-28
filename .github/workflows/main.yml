@@ -1,12 +1,26 @@
-on: [push]
+name: "Deploy Documentation"
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
-    name: Sphinx Pages
+  docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: seanzhengw/sphinx-pages@master
-        id: sphinx-pages
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          create_readme: true
+    - name: Checkout
+      uses: actions/checkout@v1
+    
+    
+    - name: Make Sphinx
+      uses: ammaraskar/sphinx-action@master
+      with:
+          docs-folder: "source"
+          build-command: "sphinx-build . build"
+    
+    # Push the HTML to github-pages
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.6.1
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./source/build   
