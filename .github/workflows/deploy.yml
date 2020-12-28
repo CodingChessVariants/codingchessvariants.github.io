@@ -2,7 +2,7 @@ name: "Deploy Documentation"
 on: 
   push:
     branches:
-      - master
+      - main
 
 jobs:
   docs:
@@ -13,7 +13,7 @@ jobs:
     
     
     - name: Make Sphinx
-      uses: ammaraskar/sphinx-action@master
+      uses: ammaraskar/sphinx-action@main
       with:
           docs-folder: "source"
           build-command: "sphinx-build . build"
