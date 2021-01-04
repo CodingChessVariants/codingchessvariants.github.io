@@ -1,15 +1,17 @@
 ===========================
-Sample Sphinx Documentation
+Coding Chess Variants
 ===========================
 
-This is a *very* rudimentary sample page for Sphinx based documentation.
+Coding Chess Variants is a Kotlin chess library used to easily create a wide range of different chess variants.
+It is intended to be used by both for beginner programmers and for those who are more experience and are looking for a framework to develop different chess-based games.
+It can be easily integrated with different chess frontends including those which support networking.
 
-In case you're looking for a lot of fairly extensive pages, that stretch the
-theme in as many reasonable ways as possible, consider scrolling right to the
-end of this page and looking at the Demo Documentation below.
-
-Quick Inline Markup Demo
+Features
 ========================
+    - Feature 1 - xd
+    - Feature 2 - xd
+    - Feature 3 - xd
+
 
 Inline markup in reStructuredText is pretty powerful. You can have *emphasis*,
 **strong emphasis**, ``inline literals``, external hyperlinks with embedded
@@ -48,15 +50,40 @@ Or, maybe, you want to present a code block to the user.
 
 .. toctree::
     :maxdepth: 2
-    :caption: Demo Documentation
+    :caption: Getting Started
 
-    demo/structure
-    demo/demo
-    demo/lists_tables
-    demo/api
+    self
+    gettingStarted/installation
+    gettingStarted/quickstart
 
 .. toctree::
-    :maxdepth: 3
-    :caption: This is an incredibly long caption for a long menu
+    :maxdepth: 2
+    :caption: Tutorials
 
-    demo/long
+    tutorials/creatingDifferentBoards
+    tutorials/creatingNewPieces
+    tutorials/creatingDifferentRules
+    tutorials/creatingDifferentWinConditions
+    tutorials/integrateIntoExampleFrontend
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Engine API
+
+    api/engine/boards
+    api/engine/coordinates
+    api/engine/gameMoves
+    api/engine/gameTypes
+    api/engine/moves
+    api/engine/pieces
+    api/engine/players
+    api/engine/utils
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Demo Reference
+
+    demo/api
+    demo/demo
+    demo/lists_tables
+    demo/structure
