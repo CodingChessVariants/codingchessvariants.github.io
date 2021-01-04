@@ -72,4 +72,3 @@ Useful for converting the gamemoves and coordinates to and from standard chess n
 
     Gets the string representation of a game move.
 
-This is about ChessNotationInput 
