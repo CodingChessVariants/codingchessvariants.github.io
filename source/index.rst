@@ -55,6 +55,7 @@ Or, maybe, you want to present a code block to the user.
     self
     gettingStarted/installation
     gettingStarted/quickstart
+    gettingStarted/supportedVariants
 
 .. toctree::
     :maxdepth: 2

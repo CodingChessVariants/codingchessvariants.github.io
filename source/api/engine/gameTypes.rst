@@ -65,7 +65,7 @@ Methods
 
 .. function:: fun getNextPlayer(): Player
 
-      Retruns the next player without incrementing the turn.
+      Returns the next player without incrementing the turn.
 
 .. function:: fun playerMakeMove(move: GM)
 
