@@ -1,14 +1,14 @@
-#import os
-#import sys
+import os
+import sys
 
-#sys.path.append(os.path.join(os.environ["SAMPLE_DOCS_LOCATION"], "demo"))
-#print("", sys.path[-1], "", sep="\n" + "-" * 80 + "\n")
+sys.path.append(os.path.join(os.environ["SAMPLE_DOCS_LOCATION"], "demo"))
+print("", sys.path[-1], "", sep="\n" + "-" * 80 + "\n")
 
 # -- Project information -----------------------------------------------------
 
-project = "Sphinx Themes Sample"
-copyright = "2020, Pradyun Gedam"
-author = "Pradyun Gedam"
+project = "Coding Chess Variants Docs"
+copyright = "2020, Coding Chess Variants"
+author = "Alex Liu, Isabel Li, Jimin Park, Kerry Xu, Radostein Petrov, Seiya Aoki"
 
 # -- Extensions --------------------------------------------------------------
 extensions = [

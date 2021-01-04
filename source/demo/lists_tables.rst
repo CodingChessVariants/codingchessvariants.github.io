@@ -3,9 +3,6 @@
 Lists & Tables
 **************
 
-Lists
-=====
-
 Enumerated Lists
 ----------------
 

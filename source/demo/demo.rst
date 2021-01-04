@@ -195,6 +195,22 @@ Emphasized lines with line numbers
        print 'This one is not...'
        print '...but this one is.'
 
+.. code-block:: kotlin
+   :emphasize-lines: 3,5
+
+   fun test() {
+      val rows = piecePlacement.split("/")
+
+      if (rows.size != board.rows) {
+          throw IllegalArgumentException("Wrong number of rows in piece placement FEN. Expected: ${board.rows} Actual: ${rows.size}")
+      }
+
+      var y = board.rows - 1
+
+      val whitePawnPromotions = pawnPromotions.map { it(player1) }
+      val blackPawnPromotions = pawnPromotions.map { it(player2) }
+   }
+
 Sidebar
 =======
 
