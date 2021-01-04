@@ -25,7 +25,8 @@ Features
     :maxdepth: 2
     :caption: Tutorials
 
-    tutorials/creatingDifferentBoards
+    tutorials/tutorial
+    tutorials/integrateIntoExampleFrontend
     tutorials/creatingNewPieces
     tutorials/creatingDifferentRules
     tutorials/creatingDifferentWinConditions

@@ -7,6 +7,19 @@ There is an example front end already implemented as part of the engine which ca
 
 For full details on the interface exposed by the game type, please look at the specific Engine API pages.
 
+Game Management
+================
+Running a chess game is simple.
+
+.. code-block:: kotlin
+
+  val game = StandardChess()
+
+  while (!game.isOver()) {
+      val move = ...
+      game.playerMakeMove(move)
+  }
+
 Attaching your own front end
 =============================
   1. Creating a game type, for example StandardChess().
@@ -32,13 +45,13 @@ The board, moveLog, backend players can be retrieved from the engine:
 
 It is easy to add metadata to the front end based on the interface provided, for example clock options (which have been implemented as demonstration). 
 
-Using the front end provided
-=============================
+Extending the provided desktop front end
+=========================================
 You can add a game type you have created by adding a button for it into MenuScreen.kt.
 
 Adding a game type:
 ^^^^^^^^^^^^^^^^^^^^
-  1. In MenuScreen.kt, create a button like so:
+  1. In core.src.screens.MenuScreen.kt, create a button like so:
 
   .. code-block:: kotlin
     
@@ -60,7 +73,7 @@ Adding a board:
   3. In GameScreen, map the board you require to your game type.
 
 Adding images for newly created pieces:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   1. In core.assets, add the image for any new pieces.
   2. In core.src.com.mygdx.game.assets.TexttureAssets.kt, create a new enum using the path to the image you want.
-  3. In core.src.com.mygdx.game.assets.Assets.kt, create a texture from the enum, and add the texture to the piece mappings.
+  3. In core.src.com.mygdx.game.assets.Assets.kt, create a texture from the enum, and add the piece and texture to the piece mappings.
