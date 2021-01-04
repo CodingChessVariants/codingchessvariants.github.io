@@ -8,6 +8,9 @@ Board
 
 .. class:: interface Board<B : Board<B, M, GM, P, C>, M : Move<B, M, GM, P, C>, GM: GameMove<B, M, GM, P, C>, P: Piece<B, M, GM, P, C>, C: Coordinate>
 
+Methods
+-------
+
 .. function:: fun getBoardState(): Array<Array<P?>>
       
       Returns a 2D representation of the board in terms of pieces. Coordinates with no pieces are null in the resulting array. **TODO: Change getBoardState to return a Map<Coordinate, P?>**

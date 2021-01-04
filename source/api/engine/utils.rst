@@ -60,6 +60,9 @@ Useful for converting the gamemoves and coordinates to and from standard chess n
 
 .. class:: class ChessNotationInput() : NotationFormatter
 
+Methods
+-------
+
 .. function:: fun strToCoordinate(s: String): Coordinate2D?
 
     Converts the string representation of a coordinate to a coordinate. e.g A1 -> Coordinate(0, 6)
