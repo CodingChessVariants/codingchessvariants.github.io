@@ -36,6 +36,9 @@ Optional parameter args
 
     ``List<KFunction1<Player, Piece2D>> pawnPromotions`` - a list of pieces a pawn can be promoted to 
 
+Methods
+-------
+
 .. function:: fun initBoardWithFEN(board: Board2D, player1: Player, player2: Player)
 
     Takes a board and initialises it with the FENstring's piece placement. Throws ``IllegalArgumentException`` if the piece placement does not fit the size of the board.
