@@ -33,7 +33,3 @@ html_title = project
 # !! MARKER !!
 
 html_theme = "catalyst_sphinx_theme"
-html_theme_options = {
-    'logo_only': True
-}
-html_logo = "static/logo.png"
