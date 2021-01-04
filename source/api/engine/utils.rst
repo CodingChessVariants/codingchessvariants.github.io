@@ -38,20 +38,37 @@ Optional parameter args
 
 .. function:: fun initBoardWithFEN(board: Board2D, player1: Player, player2: Player)
 
-  Takes a board and initialises it with the FENstring's piece placement. Throws ``IllegalArgumentException`` if the piece placement does not fit the size of the board.
+    Takes a board and initialises it with the FENstring's piece placement. Throws ``IllegalArgumentException`` if the piece placement does not fit the size of the board.
 
 .. method:: val activeColour: Int
+
 Returns the activeColour from the FENstring
 
 .. method:: val p1CanCastleLeft: Int
 .. method:: val p1CanCastleRight: Int
 .. method:: val p2CanCastleLeft: Int
 .. method:: val p2CanCastleRight: Int
+
 Returns the castling availibilty for left and right side castling for black and white
+
+|
 
 ChessNotationInput
 ==================
 
+Useful for converting the gamemoves and coordinates to and from standard chess notation.
+
 .. class:: class ChessNotationInput() : NotationFormatter
 
-This is about ChessNotationInput 
+.. function:: fun strToCoordinate(s: String): Coordinate2D?
+
+    Converts the string representation of a coordinate to a coordinate. e.g A1 -> Coordinate(0, 6)
+
+.. function:: fun coordinateToStr(c: Coordinate2D): String
+    
+    Converts a coordinate to the string representation of a coordinate. e.g Coordinate(0, 6) -> A1
+
+.. function:: fun gameMoveToStr(gameMove: GameMove2D): String
+
+    Gets the string representation of a game move.
+
