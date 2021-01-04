@@ -55,6 +55,7 @@ Or, maybe, you want to present a code block to the user.
     self
     gettingStarted/installation
     gettingStarted/quickstart
+    gettingStarted/supportedVariants
 
 .. toctree::
     :maxdepth: 2
@@ -79,6 +80,12 @@ Or, maybe, you want to present a code block to the user.
     api/engine/pieces
     api/engine/players
     api/engine/utils
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Demo
+
+    demo2/variants
 
 .. toctree::
     :maxdepth: 2

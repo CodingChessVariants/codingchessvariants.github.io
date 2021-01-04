@@ -2,11 +2,16 @@
 Game Types
 **********************
 
+GameType
+========
 .. class:: interface GameType<B : Board<B, M, GM, P, C>, M : Move<B, M, GM, P, C>, GM: GameMove<B, M, GM, P, C>, P: Piece<B, M, GM, P, C>, C: Coordinate>
 
 Represents a game variant (e.g. Standard Chess, Capablanca Chess, Xiangqi).
 Controls the flow of a game and keeps track of all the game moves in the move log, 
 which player has the current turn and the final result of the game.
+
+Methods
+-------
 
 .. function:: fun initGame()
 
@@ -60,7 +65,7 @@ which player has the current turn and the final result of the game.
 
 .. function:: fun getNextPlayer(): Player
 
-      Retruns the next player without incrementing the turn.
+      Returns the next player without incrementing the turn.
 
 .. function:: fun playerMakeMove(move: GM)
 

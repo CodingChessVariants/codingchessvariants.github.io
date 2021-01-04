@@ -10,8 +10,8 @@ GameMove
 GameMove2D
 ==========
 
-.. class:: sealed class GameMove2D(open val player: Player) : GameMove<Board2D, Move2D, GameMove2D, Piece2D, Coordinate2D> {
+.. class:: sealed class GameMove2D(open val player: Player) : GameMove<Board2D, Move2D, GameMove2D, Piece2D, Coordinate2D>
 
-Implementation of the Board interface for a 2d square board.
+Implementation of the GameMove interface for a 2d square board.
 Contains the starting and ending coordinates, the piece moved,
 the piece captured and the piece promoted to.
