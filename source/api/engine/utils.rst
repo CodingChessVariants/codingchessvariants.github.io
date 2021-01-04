@@ -17,6 +17,8 @@ Our shortened FEN notation takes 3 fields:
 
 3. Castling Availibilty
 
+|
+
 For example a valid FEN string for standard chess would be "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq"
 
 .. class:: class FenUtility(val FENstring: String)
@@ -36,17 +38,15 @@ Optional parameter args
 
 .. function:: fun initBoardWithFEN(board: Board2D, player1: Player, player2: Player)
 
-Takes a board and initialises it with the FENstring's piece placement. Throws ``IllegalArgumentException`` if the piece placement does not fit the size of the board.
+  Takes a board and initialises it with the FENstring's piece placement. Throws ``IllegalArgumentException`` if the piece placement does not fit the size of the board.
 
 .. method:: val activeColour: Int
-
 Returns the activeColour from the FENstring
 
 .. method:: val p1CanCastleLeft: Int
 .. method:: val p1CanCastleRight: Int
 .. method:: val p2CanCastleLeft: Int
 .. method:: val p2CanCastleRight: Int
-
 Returns the castling availibilty for left and right side castling for black and white
 
 ChessNotationInput
