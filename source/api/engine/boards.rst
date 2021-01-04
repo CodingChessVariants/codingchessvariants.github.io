@@ -1,33 +1,44 @@
 **********************
 Boards
 **********************
-.. code-block:: kotlin
-   fun xd() {
-    interface Board<B : Board<B, M, GM, P, C>, M : Move<B, M, GM, P, C>, GM: GameMove<B, M, GM, P, C>, P: Piece<B, M, GM, P, C>, C: Coordinate>
-    fun getBoardState(): Array<Array<P?>>
-   }
-   
-.. code-block:: kotlin
-   :emphasize-lines: 3,5
+Everything to do with chess boards
 
-   fun test() {
-      val rows = piecePlacement.split("/")
-
-      if (rows.size != board.rows) {
-          throw IllegalArgumentException("Wrong number of rows in piece placement FEN. Expected: ${board.rows} Actual: ${rows.size}")
-      }
-
-      var y = board.rows - 1
-
-      val whitePawnPromotions = pawnPromotions.map { it(player1) }
-      val blackPawnPromotions = pawnPromotions.map { it(player2) }
-   }
+Board
+==========
 
 .. class:: interface Board<B : Board<B, M, GM, P, C>, M : Move<B, M, GM, P, C>, GM: GameMove<B, M, GM, P, C>, P: Piece<B, M, GM, P, C>, C: Coordinate>
-.. method:: fun getBoardState(): Array<Array<P?>>
-.. method:: fun addPiece(coordinate: C, piece: P)
-.. method:: fun removePiece(coordinate: C, piece: P)
-.. method:: fun getPieces(): List<Pair<P, C>>
-.. method:: fun getPieces(player: Player): List<Pair<P, C>>
-.. method:: fun getPiece(coordinate: C): P?
-.. method:: fun getPieceCoordinate(piece: P): C?
+
+.. function:: fun getBoardState(): Array<Array<P?>>
+      
+      Returns a 2D representation of the board in terms of pieces. Coordinates with no pieces are null in the resulting array. **TODO: Change getBoardState to return a Map<Coordinate, P?>**
+
+.. function:: fun addPiece(coordinate: C, piece: P)
+      
+      Adds a piece P at coordinate C onto the board.
+
+.. function:: fun removePiece(coordinate: C, piece: P)
+      
+      Removes a piece P at coordinate C from the board.
+
+.. function:: fun getPieces(): List<Pair<P, C>>
+      
+      Returns a list of pairs representing which coordinate each piece is on. **TODO: Change getPieces to return a Map<P, C>**
+
+.. function:: fun getPieces(player: Player): List<Pair<P, C>>
+      
+      Returns a list of pairs representing which coordinate each piece is on for the given player. **TODO: Change getPieces to return a Map<P, C>**
+
+.. fun getPiece(coordinate: C): P?
+      
+      Returns the piece on the given coordinate if there is one. Otherwise returns null.
+
+.. function:: fun getPieceCoordinate(piece: P): C?
+      
+      Returns the coordinate of a given piece by reference.
+
+Board2D
+==========
+
+.. class:: class Board2D(val rows: Int, val cols: Int) : Board<Board2D, Move2D, GameMove2D, Piece2D, Coordinate2D> 
+
+Implementation of the Board interface for a 2d square board. The board size is rows x cols and each coordinate can have upto one Piece2D.
