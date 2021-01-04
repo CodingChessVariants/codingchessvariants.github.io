@@ -60,7 +60,8 @@ Or, maybe, you want to present a code block to the user.
     :maxdepth: 2
     :caption: Tutorials
 
-    tutorials/creatingDifferentBoards
+    tutorials/tutorial
+    tutorials/integrateIntoExampleFrontend
     tutorials/creatingNewPieces
     tutorials/creatingDifferentRules
     tutorials/creatingDifferentWinConditions
