@@ -17,6 +17,8 @@ Our shortened FEN notation takes 3 fields:
 
 3. Castling Availibilty
 
+|
+
 For example a valid FEN string for standard chess would be "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq"
 
 .. class:: class FenUtility(val FENstring: String)
