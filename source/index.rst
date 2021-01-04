@@ -8,45 +8,9 @@ It can be easily integrated with different chess frontends including those which
 
 Features
 ========================
-    - Feature 1 - xd
-    - Feature 2 - xd
-    - Feature 3 - xd
-
-
-Inline markup in reStructuredText is pretty powerful. You can have *emphasis*,
-**strong emphasis**, ``inline literals``, external hyperlinks with embedded
-URIs (`Python web site <http://www.python.org>`__) standalone hyperlinks
-(http://www.python.org), footnote references [1]_ and so much more. Sometimes,
-you even have some |problematic| text that doesn't do the right things but
-Sphinx still builds your page.
-
-Often, you'll have multiple paragraphs of text in your documentation, possibly
-an explanation how stuff works. Here are some explicit interpreted text roles:
-a PEP reference (:PEP:`287`); a :sub:`subscript`; a :sup:`superscript`; and
-explicit roles for :emphasis:`standard` :strong:`inline` :literal:`markup`.
-
-.. note::
-    You may want to know what admonitions look like.
-
-.. important::
-    I just wanted to interrupt your very relevant insight, to assert my
-    importance.
-
-Or, maybe, you want to present a code block to the user.
-
-.. code-block:: python
-    :linenos:
-    :emphasize-lines: 6,9
-
-    """Just a small code example"""
-
-    class Demo:
-        def __init__(self):
-            super().__init__()
-            self.ready = True
-
-        def how_ready_are_we(self) -> str:
-            return "very" if self.ready else "not at all"
+- Feature 1 - xd
+- Feature 2 - xd
+- Feature 3 - xd
 
 .. toctree::
     :maxdepth: 2
