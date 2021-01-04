@@ -81,6 +81,12 @@ Or, maybe, you want to present a code block to the user.
 
 .. toctree::
     :maxdepth: 2
+    :caption: Demo
+
+    demo2/variants
+
+.. toctree::
+    :maxdepth: 2
     :caption: Demo Reference
 
     demo/api
