@@ -28,7 +28,7 @@ Features
 .. toctree::
     :maxdepth: 2
     :caption: Tutorials
-
+    tutorials/integrateIntoExampleFrontend
     tutorials/tutorial
     tutorials/creatingNewPieces
     tutorials/creatingRules
