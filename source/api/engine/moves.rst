@@ -13,7 +13,7 @@ For example, we use four types of moves to describe the movement of standard che
     - Sliders - move along a ray direction until they encounter another piece or the edge of the board
     - Leapers - perform single steps to specified target squares
     - Steppers - perform single (repeated) steps in a particular board direction
-    - Hoppers - TODO() 
+    - Hoppers - can move along a ray direction, but must jump over another piece.
 
 We also use the following conditions as wrappers to describe moves:
     - CaptureOnly - move can only occur if it captures a piece
@@ -22,7 +22,7 @@ We also use the following conditions as wrappers to describe moves:
     - RestrictedDestination - move can only occur if the destination is within a specific region
     - Composite - This is a wrapper around a list of basic moves to represent composite moves.
 
-AddPromotion - TODO() where does this go 
+To add moves which could result in promotion, we use the 'AddPromotion' wrapper which takes in a list of moves which can results in promotion.
 
 We also include a special move 'Skip' to skip moves, as in Janggi.
 
