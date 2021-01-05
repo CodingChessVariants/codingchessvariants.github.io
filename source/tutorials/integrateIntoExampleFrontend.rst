@@ -3,6 +3,11 @@ Integrating Into a Frontend
 ****************************
 The engine provides an interface to easily attach a frontend.
 
+.. figure:: /../_static/images/chess-ingame.png
+    :width: 70%
+
+    Provided example front end
+
 There is an example front end already implemented as part of the engine which can be adapted to account for any extensions or changes to the library.
 
 For full details on the interface exposed by the game type, please look at the specific Engine API pages.

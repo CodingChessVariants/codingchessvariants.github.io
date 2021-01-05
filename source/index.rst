@@ -6,6 +6,10 @@ Coding Chess Variants is a Kotlin chess library used to easily create a wide ran
 It is intended to be used by both for beginner programmers and for those who are more experience and are looking for a framework to develop different chess-based games.
 It can be easily integrated with different chess frontends including those which support networking.
 
+.. figure:: /_static/images/chess-ingame.png
+
+    :width: 60%
+
 Features
 ========================
 - Feature 1 - xd
@@ -26,7 +30,6 @@ Features
     :caption: Tutorials
 
     tutorials/tutorial
-    tutorials/integrateIntoExampleFrontend
     tutorials/creatingNewPieces
     tutorials/creatingDifferentRules
     tutorials/creatingDifferentWinConditions
