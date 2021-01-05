@@ -2,7 +2,9 @@
 Creating New Pieces
 **********************
 
-Creating pieces requires you to also provide the moves it can make, excluding special rules which are evaluated later.
+Creating new pieces requires you to also provide the moves it can make, excluding special rules which are evaluated later.
+
+Pieces that have already been implemented are those in standard chess, Capablanca Chess, Antichess, Grand chess, Xiangqi, and Janggi.
 
 Step 1: Implement the Piece interface
 =======================================
