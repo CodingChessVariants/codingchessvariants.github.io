@@ -27,6 +27,7 @@ Features
 
     tutorials/tutorial
     tutorials/integrateIntoExampleFrontend
+    tutorials/creatingBoards
     tutorials/creatingNewPieces
     tutorials/creatingRules
     tutorials/creatingWinConditions
