@@ -70,3 +70,28 @@ Methods
 .. function:: fun playerMakeMove(move: GM)
 
       Makes a given move and increments the turn.
+
+SpecialRules
+=============
+
+Represents special rules that are specific to games, such as Castling and En Passant.
+
+Methods
+--------
+
+.. function:: fun getPossibleMoves(game: @UnsafeVariance T, player: Player, moves: MutableList<GameMove2D>)
+
+      Returns the possible moves generated as a result of the special rule.
+
+
+Win Conditions
+================
+
+Represents conditions for stalemates or checkmates.
+
+Methods
+-------
+
+.. function:: fun evaluate(game: @UnsafeVariance T, player: Player, moves: List<GameMove2D>): Outcome?
+      
+      Returns an outcome if the game should end if it satisfies the condition, otherwise returns null.

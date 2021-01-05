@@ -1,3 +1,3 @@
 ***************************
-Creating Different Boards
+Creating Boards
 ***************************

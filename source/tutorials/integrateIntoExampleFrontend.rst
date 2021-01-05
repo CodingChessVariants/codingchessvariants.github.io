@@ -82,3 +82,8 @@ Adding images for newly created pieces:
   1. In core.assets, add the image for any new pieces.
   2. In core.src.com.mygdx.game.assets.TexttureAssets.kt, create a new enum using the path to the image you want.
   3. In core.src.com.mygdx.game.assets.Assets.kt, create a texture from the enum, and add the piece and texture to the piece mappings.
+
+Extending the Console Frontend
+===============================
+
+TODO()
