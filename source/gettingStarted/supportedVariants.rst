@@ -41,3 +41,38 @@ Our engine can also support various different chess variants with features inclu
 |
 
 It can also be easily extended to support a vast range of non-chess related board games.
+
+
+.. list-table::
+
+    * - .. figure:: /../_static/images/standardchess.png
+
+         Standard Chess
+
+      - .. figure:: /../_static/images/capablancachess.png
+
+         Capablanca Chess
+      
+    
+    * - .. figure:: /../_static/images/chess960.png
+
+         Chess960
+
+      - .. figure:: /../_static/images/grandchess.png
+
+         Grand Chess
+
+    
+    * - .. figure:: /../_static/images/xiangqi.png
+
+         Xiangqi
+
+      - .. figure:: /../_static/images/janggi.png
+
+         Janggi
+
+    * - .. figure:: /../_static/images/minichess.png
+
+         Mini Chess
+        
+      - 
