@@ -87,7 +87,7 @@ Methods
 Win Conditions
 ================
 
-Represents conditions for stalemates or checkmates. 
+Represents conditions for stalemates or checkmates.
 
 Methods
 -------

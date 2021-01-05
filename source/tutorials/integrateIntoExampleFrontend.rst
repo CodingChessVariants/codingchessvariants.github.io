@@ -80,3 +80,5 @@ Adding images for newly created pieces:
 
 Extending the Console Frontend
 ===============================
+
+TODO()

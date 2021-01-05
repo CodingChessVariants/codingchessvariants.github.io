@@ -28,9 +28,8 @@ Features
     tutorials/tutorial
     tutorials/integrateIntoExampleFrontend
     tutorials/creatingNewPieces
-    tutorials/creatingDifferentRules
-    tutorials/creatingDifferentWinConditions
-    tutorials/integrateIntoExampleFrontend
+    tutorials/creatingRules
+    tutorials/creatingWinConditions
 
 .. toctree::
     :maxdepth: 2
