@@ -16,7 +16,7 @@ Step 2: Implement the methods
 ================================
 
 Option 1: (If your piece is a standard pawn)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Your piece is a standard pawn if:
    - The game is 2D
    - It can double move on it's first turn
@@ -28,7 +28,25 @@ In this case, you can directly implement the WhitePawn class, and set custom set
 
 Option 2: Otherwise
 ^^^^^^^^^^^^^^^^^^^^^
-You must a give a list of moves the piece can do in moveTypes. Please look at the Engine API pages for Moves for further details.
+You must a give a list of MoveGenerators the piece can do in moveTypes. Please look at the Engine API pages for MoveGenerator for further details.
+
+We use four types of moves to describe the movement of standard chess pieces:
+    - Sliders - move along a ray direction until they encounter another piece or the edge of the board
+    - Leapers - perform single steps to specified target squares
+    - Steppers - perform single (repeated) steps in a particular board direction
+    - Hoppers - can move along a ray direction, but must jump over another piece.
+
+We also use the following conditions as wrappers to describe moves:
+    - CaptureOnly - move can only occur if it captures a piece
+    - NoCapture - move can only occur if it doesn't capture a piece
+    - Restricted - move can only occur when the piece starts in a specific region
+    - RestrictedDestination - move can only occur if the destination is within a specific region
+    - Composite - This is a wrapper around a list of basic moves to represent a composite moves.
+
+To add moves which could result in promotion, we use the 'AddPromotion' wrapper which takes in a list of moves which can results in promotion.
+
+We also include a special move 'Skip' to skip moves, such as in Janggi.
+
 For example, the standard Rook gives this as their moveTypes:
 
 .. code-block:: kotlin
@@ -37,7 +55,6 @@ For example, the standard Rook gives this as their moveTypes:
         get() = listOf(Move2D.Slider(H = true, V = true, A = false, D = false))
 
 This describes the rook's movements as a slider that can only move horizontally or vertically.
-
 
 For a more complicated example, WhitePawn gives this as their moveTypes:
 

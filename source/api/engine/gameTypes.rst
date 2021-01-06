@@ -4,7 +4,7 @@ Game Types
 
 GameType
 ========
-.. class:: interface GameType<B : Board<B, M, GM, P, C>, M : Move<B, M, GM, P, C>, GM: GameMove<B, M, GM, P, C>, P: Piece<B, M, GM, P, C>, C: Coordinate>
+.. class:: interface GameType<B : Board<B, M, GM, P, C>, M : Move<B, M, GM, P, C>, GM: Move<B, M, GM, P, C>, P: Piece<B, M, GM, P, C>, C: Coordinate>
 
 Represents a game variant (e.g. Standard Chess, Capablanca Chess, Xiangqi).
 Controls the flow of a game and keeps track of all the game moves in the move log, 

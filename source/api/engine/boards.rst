@@ -31,7 +31,7 @@ Methods
       
       Returns a list of pairs representing which coordinate each piece is on for the given player. **TODO: Change getPieces to return a Map<P, C>**
 
-.. fun getPiece(coordinate: C): P?
+.. function:: fun getPiece(coordinate: C): P?
       
       Returns the piece on the given coordinate if there is one. Otherwise returns null.
 

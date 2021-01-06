@@ -42,9 +42,9 @@ Features
 
     api/engine/boards
     api/engine/coordinates
-    api/engine/gameMoves
-    api/engine/gameTypes
     api/engine/moves
+    api/engine/gameTypes
+    api/engine/moveGenerators
     api/engine/pieces
     api/engine/players
     api/engine/utils
