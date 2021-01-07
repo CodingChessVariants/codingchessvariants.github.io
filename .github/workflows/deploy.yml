@@ -12,11 +12,21 @@ jobs:
       uses: actions/checkout@v1
     
     
-    - name: Make Sphinx
-      uses: ammaraskar/sphinx-action@master
+#     - name: Make Sphinx
+#       uses: ammaraskar/sphinx-action@master
+#       with:
+#           docs-folder: "source"
+#           build-command: "sphinx-build . build"
+          
+    - name: Make Sphinx python
+      uses: actions/setup-python@master
       with:
-          docs-folder: "source"
-          build-command: "sphinx-build . build"
+          python-version: 3.8
+    - name: build
+      run: |
+         sudo python3 setup.py install
+         make html
+      
     
     # Push the HTML to github-pages
     - name: GitHub Pages action
