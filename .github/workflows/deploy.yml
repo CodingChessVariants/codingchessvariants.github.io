@@ -24,6 +24,7 @@ jobs:
           python-version: 3.8
     - name: build
       run: |
+         pip3 install -r source/requirements.txt
          sudo python3 setup.py install
          make html
       
