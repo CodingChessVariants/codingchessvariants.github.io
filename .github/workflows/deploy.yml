@@ -25,6 +25,7 @@ jobs:
     - name: build
       run: |
          pip3 install -r source/requirements.txt
+         pip3 install setuptools
          sudo python3 setup.py install
          make html
       
