@@ -1,0 +1,490 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial &mdash; Coding Chess Variants Docs</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating Boards" href="creatingBoards.html" />
+    <link rel="prev" title="Supported Variants" href="../gettingStarted/supportedVariants.html" /> 
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167094275-1"></script>
+  <script src="../_static/js/googleanalytics.min.js"></script>
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://codingchessvariants.github.io/" aria-label="Catalyst" ></a>
+
+      <div class="main-menu">
+        <ul>
+
+        <li>
+          <a href="https://codingchessvariants.github.io/">Documentation</a>
+        </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+
+  </div>
+</div>
+
+
+<body class="catalyst-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="catalyst-left-menu" id="catalyst-left-menu">
+      <div class="catalyst-side-scroll">
+        <div class="catalyst-menu catalyst-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="catalyst-left-menu-search">
+            
+
+            
+              
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Coding Chess Variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/supportedVariants.html">Supported Variants</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Creating Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingNewPieces.html">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingRules.html">Creating Special Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating Win Conditions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engine API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/boards.html">Boards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/coordinates.html">Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameMoves.html">Game Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/moves.html">Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/pieces.html">Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/players.html">Players</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/utils.html">Utils</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Demo Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../demo/api.html">API documentation and generated content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/demo.html">Paragraph Level Markup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/lists_tables.html">Lists &amp; Tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html">Structural Elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="catalyst-container">
+      <div class="catalyst-page-level-bar" id="catalyst-page-level-bar">
+        <div class="catalyst-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="catalyst-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Tutorial</li>
+    
+    
+      <li class="catalyst-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/tutorial.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="catalyst-shortcuts-wrapper" id="catalyst-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="catalyst-content-wrap" class="catalyst-content-wrap">
+        <div class="catalyst-content-left">
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="catalyst-article" class="catalyst-article">
+              
+  <div class="section" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Here we will demonstrate the steps for creating chess variants. Please refer to the specific engine API pages for more specific details.</p>
+<p>In these steps, please refer to the specific tutorial pages for more details.</p>
+<div class="section" id="step-1-create-the-initial-setup-for-a-new-chess-variant">
+<h2>Step 1. Create the initial setup for a new chess variant.<a class="headerlink" href="#step-1-create-the-initial-setup-for-a-new-chess-variant" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Create a new board, or use an already implemented board.</p></li>
+<li><p>Create new pieces, and moves, or use already implemented pieces.</p></li>
+</ol>
+<ol class="loweralpha simple" start="4">
+<li><p>Create new win conditions, or use already implemented win conditions.</p></li>
+<li><p>Create new special rules (such as castling, or ), or use rules that have already been implemented.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="step-2-add-a-new-game-type">
+<h2>Step 2: Add a new Game type<a class="headerlink" href="#step-2-add-a-new-game-type" title="Permalink to this headline">¶</a></h2>
+<p>In GameTypes, add your new chess variant. This should take in a list of rules and a list of win conditions.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>You variant can implement a more generic AbstractChess.</p></li>
+<li><p>Or it can implement a more specific chess variant from StandardChess. You can use this if you are using a 2D board, has standard castling rules, en passant, has promotable pieces, and standard win conditions.</p></li>
+</ol>
+</div></blockquote>
+<div class="section" id="implement-the-initgame-method">
+<h3>Implement the initGame() method.<a class="headerlink" href="#implement-the-initgame-method" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>The initGame method should initialise the board.</dt><dd><ol class="loweralpha simple">
+<li><p>If your game implements StandardChess, you can use FEN notation to set up the game in the class declaration, like so:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">sampleChess</span><span class="p">()</span> <span class="p">:</span> <span class="n">StandardChess</span><span class="p">(</span><span class="n">FenUtility</span><span class="p">(</span><span class="s">&quot;rqkr/pppp/PPPP/RQKR w -&quot;</span><span class="p">,</span> <span class="n">whiteStartingRow</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">whitePromotionRow</span> <span class="p">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">blackStartingRow</span> <span class="p">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">blackPromotionRow</span> <span class="p">=</span> <span class="m">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>And the initGame() method should look like this:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">initGame</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+    <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+    <span class="n">fen</span><span class="p">.</span><span class="n">initBoardWithFEN</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">player1</span><span class="p">,</span> <span class="n">player2</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="loweralpha simple" start="2">
+<li><p>If your game implements AbstractChess, you must manually add each piece to the board by it’s position, like so:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">initGame</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+    <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="m">9</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">GrandWhitePawn</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">7</span><span class="p">),</span> <span class="n">GrandBlackPawn</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+
+    <span class="p">...</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="step-3-add-the-frontend">
+<h2>Step 3: Add the frontend<a class="headerlink" href="#step-3-add-the-frontend" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Desktop: Integrate your own frontend or extend the existing front end to accomadate your new variant.</p></li>
+<li><p>Console: Eextend the console front end to play your variant in the console.</p></li>
+</ul>
+</div>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="creatingBoards.html" class="btn btn-neutral float-right" title="Creating Boards" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="../gettingStarted/supportedVariants.html" class="btn btn-neutral" title="Supported Variants" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Coding Chess Variants.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="catalyst-content-right" id="catalyst-content-right">
+          <div class="catalyst-right-menu" id="catalyst-right-menu">
+            <div class="catalyst-side-scroll" id="catalyst-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Tutorial</a><ul>
+<li><a class="reference internal" href="#step-1-create-the-initial-setup-for-a-new-chess-variant">Step 1. Create the initial setup for a new chess variant.</a></li>
+<li><a class="reference internal" href="#step-2-add-a-new-game-type">Step 2: Add a new Game type</a><ul>
+<li><a class="reference internal" href="#implement-the-initgame-method">Implement the initGame() method.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-3-add-the-frontend">Step 3: Add the frontend</a></li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+         <script src="../_static/jquery.js"></script>
+         <script src="../_static/underscore.js"></script>
+         <script src="../_static/doctools.js"></script>
+         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://codingchessvariants.github.io/" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://github.com/catalyst-team">Ecosystem</a></li>
+            <li><a class="nav-dropdown-item" href="https://alchemy.host">Alchemy</a></li>
+            <li><a class="nav-dropdown-item" href="https://github.com/catalyst-team/catalyst">Catalyst</a></li>
+            <li><a class="nav-dropdown-item" href="https://github.com/catalyst-team/reaction">Reaction</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://github.com/catalyst-team">Projects</a></li>
+            <li><a class="nav-dropdown-item" href="https://github.com/catalyst-team/codestyle">Codestyle</a></li>
+            <li><a class="nav-dropdown-item" href="https://github.com/catalyst-team/neuro">Catalyst.Neuro</a></li>
+            <li><a class="nav-dropdown-item" href="https://github.com/catalyst-team/classification">Classification</a></li>
+            <li><a class="nav-dropdown-item" href="https://github.com/catalyst-team/detection">Detection</a></li>
+            <li><a class="nav-dropdown-item" href="https://github.com/catalyst-team/segmentation">Segmentation</a></li>
+            <li><a class="nav-dropdown-item" href="https://github.com/catalyst-team/gan">Catalyst.GAN</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://codingchessvariants.github.io/">Support</a></li>
+            <li><a href="https://github.com/catalyst-team/catalyst/issues" target="_blank">Github Issues</a></li>
+            <li><a href="https://github.com/catalyst-team/catalyst/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+            <li><a href="https://www.patreon.com/catalyst_team" target="_blank">Patreon</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col follow-us-col">
+          <div class="footer-social-icons">
+            <a href="https://t.me/catalyst_team" target="_blank" class="telegram"></a>
+            <a href="https://twitter.com/catalyst_core" target="_blank" class="twitter"></a>
+            <a href="https://join.slack.com/t/catalyst-team-core/shared_invite/zt-d9miirnn-z86oKDzFMKlMG4fgFdZafw" target="_blank" class="ods"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://codingchessvariants.github.io/" aria-label="Catalyst"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/catalyst-team/catalyst">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      catalystAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.catalyst-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>
