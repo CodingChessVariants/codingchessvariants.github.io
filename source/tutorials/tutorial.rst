@@ -2,19 +2,19 @@
 Tutorial
 **********************************
 
-Here we will demonstrate the steps for creating chess variants. Please refer to the specific engine API pages for more specific details.
+Here we will demonstrate the steps for creating this chess variant.
 
-In these steps, please refer to the specific tutorial pages for more details.
-
-Step 1. Create the initial setup for a new chess variant.    
+Step 1. Create the Fairy Pieces (new pieces)
 -----------------------------------------------------------
-  a. Create a new board, or use an already implemented board.
+  a. Navigate to engine.src.main.kotlin.pieces
   
-  b. Create new pieces, and moves, or use already implemented pieces.
+  b. Create a new package called "tutorial"
 
-  d. Create new win conditions, or use already implemented win conditions.
+  c. 
 
-  e. Create new special rules (such as castling), or use rules that have already been implemented.
+1. Create the fairy pieces
+2. Initialise the game, and set up the board
+3. 
   
 Step 2: Add a new Game type
 ----------------------------
