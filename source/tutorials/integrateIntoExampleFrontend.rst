@@ -10,95 +10,84 @@ The engine provides an interface to easily attach a frontend.
 
 There is an example front end already implemented as part of the engine which can be adapted to account for any extensions or changes to the library.
 
-For full details on the interface exposed by the game type, please look at the specific Engine API pages.
+For our variant, we can extend this example desktop front end to play our game!
 
-Game Management
-================
-Running a chess game is simple.
+Step 1: Add images for new pieces
+-------------------------------------
+The Berlin Pawn can use the same image as a standard pawn which is already included in the library.
+The Alfil is usually represented as an elephant. Navigate to the core.assets folder, and add these two images inside of it. Name them whiteAlfil.png and blackAlfil.png as appropriate.
+.. figure:: /../_static/whiteAlfil.png
+    :width: 70%
+
+    whiteAlfil
+
+.. figure:: /../_static/blackAlfil.png
+    :width: 70%
+
+    blackAlfil
+
+Step 2: Map these images to textures
+----------------------------------------
+1. Navigate to core.src.com.mygdx.game.assets
+2. In TextureAssets.kt, add new enums for the BlackAlfil and WhiteAlfil with a path to the image.
 
 .. code-block:: kotlin
 
-  val game = StandardChess()
+  enum class TextureAssets(val path: String) {
+      
+      ...
 
-  while (!game.isOver()) {
-      val move = ...
-      game.playerMakeMove(move)
+      WhiteAlfil("WhiteAlfil.png"),
+      BlackAlfil("BlackAlfil.png")
   }
 
-Attaching your own front end
-=============================
-  1. Creating a game type, for example StandardChess().
+3. In Textures.kt, add new variables for the WhiteAlfil and BlackAlfil textures
 
-  2. You do not need a front-end player, but if you want to add further information such as usernames, colour of player etc., you may find it useful to add this. You can either use the pre-implemented front-end-player, or create your own. These can be mapped to the engine implementation of the players for ease of use.
+.. code-block:: kotlin 
 
-  3. Call initGame() on the game instance once all the parameters have been set up.
+  val blackAlfil = assets[TextureAssets.BlackAlfil]
+  val whiteAlfil = assets[TextureAssets.WhiteAlfil]
 
-  4. You can get the possible moves for a player like so: getValidMoves(player), and to trigger the engine to make a move, you can use playerMakeMove(move). The engine will change the turns of the players for you.
+Step 3: Map textures to pieces
+----------------------------------
+1. Navigate to core.src.com.mygdx.game.assets.Textures.kt
+2. In the 'whites' mapping, add the following mappings:
 
-  5. You can check if a game is over by calling isOver(), and find the outcome (Stalemate, Checkmate, etc.) by calling GetOutCome(). 
+.. code-block:: kotlin 
 
-The board, moveLog, backend players can be retrieved from the engine:
-  1. Board: board field in GameType
-  
-  2. Players: players field in GameType
-  
-  3. Move Log: moveLog field in GameType
-  
-  4. Current player: Call getCurrentPlayer()
-  
-  5. Next Player: Call getNextPlayer()
+  Alfil::class to whiteAlfil,
+  BerlinWhitePawn::class to whitePawn,
 
-It is easy to add metadata to the front end based on the interface provided, for example clock options (which have been implemented as demonstration). 
+3. In the 'blacks' mapping, add the following mappings:
 
-Extending the provided desktop front end
-=========================================
-You can add a game type you have created by adding a button for it into MenuScreen.kt.
+.. code-block:: kotlin 
 
-Adding a game type:
-^^^^^^^^^^^^^^^^^^^^
-  1. In core.src.screens.MenuScreen.kt, create a button like so:
+  Alfil::class to blackAlfil,
+  BerlinBlackPawn::class to blackPawn,
 
-  .. code-block:: kotlin
-    
-    val sampleButton = TextButton("sample", skin)
+Step 4: Add the button for the variant in the menu screen
+------------------------------------------------------------
+1. Navigate to core.src.screens.MenuScreen.
+2. Add TutorialChess to the chessTypes mapping like so:
 
-    sampleButton.addListener(object : ChangeListener() {
-      override fun changed(event: ChangeEvent?, actor: Actor?) {
-          selectChessType(sampleButton)
-      }
-    })
+.. code-block:: kotlin
+  :emphasize-lines: 13
 
-  2. Add this button and your game type into the chessTypes map.
+  val chessTypes = mapOf(
+    standardChessButton to StandardChess(),
+    grandChessButton to GrandChess(),
+    capablancaChessButton to CapablancaChess(),
+    chess960Button to Chess960(),
+    janggiButton to Janggi(),
+    xiangqiButton to Xiangqi(),
+    antiChessButton to AntiChess(),
+    miniChessButton to MiniChess(),
+    balbosGameButton to BalbosGame(),
+    checkersGameButton to Checkers(),
+    playgroundButton to ChessPlayground(),
+    tutorialButton to TutorialChess()
+)
 
-  
-Adding a board:
-^^^^^^^^^^^^^^^^
-  1. If your board is a variation of the standard chess board (rectangular squares), or the Xiangqi board, then you can simple use boards that have already been implemented and skip to Step 3.
-  2. Create a board that implements GUIBoard, and implement the method drawBoard().
-  3. In GameScreen, map the board you require to your game type.
-
-Adding images for newly created pieces:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  1. In core.assets, add the image for any new pieces.
-  2. In core.src.com.mygdx.game.assets.TexttureAssets.kt, create a new enum using the path to the image you want.
-  3. In core.src.com.mygdx.game.assets.Assets.kt, create a texture from the enum, and add the piece and texture to the piece mappings.
-
-Extending the Console Frontend
-===============================
-In console.src.main.kotlin, in the Chess.kt file, add your variant into the mappedVariants map.
-Running the console front end should now give the option of playing the new variant.
-
-Once you have created your chess variant class, you can make it playable by the console by navigating to Chess.kt
-
-Adding a game type:
-^^^^^^^^^^^^^^^^^^^^
-  1. In console.src.main.kotlin.Chess.kt, create a val chess to store your chosen chess varian class. Specify the number and type of players (HumanConsolePlayer or ComputerConsolePlayer). An example for Capablanca Chess with two Human Players:
-  .. code-block:: kotlin
-    val chess: AbstractChess = CapablancaChess()
-    val player1 = HumanConsolePlayer(ChessNotationInput(), chess, chess.players[0])
-    val player2 = HumanConsolePlayer(ChessNotationInput(), chess, chess.players[1])
-
-  2. Call start() on ConsoleGameHelper with your selected game type and player:
-  .. code-block:: kotlin
-    val game = ConsoleGameHelper(chess, player1, player2)
-    game.start()
+Good job
+-----------
+Now when you start up the desktop applciation, you should be able to see an option for the variant you've created and be able to play it. 
