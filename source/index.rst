@@ -22,19 +22,20 @@ Features
 
     self
     gettingStarted/installation
-    gettingStarted/quickstart
+    gettingStarted/developerSetup
     gettingStarted/supportedVariants
+    gettingStarted/quickstart
 
 .. toctree::
     :maxdepth: 2
     :caption: Tutorials
     
-    tutorials/tutorial
-    tutorials/creatingBoards
-    tutorials/integrateIntoExampleFrontend
+    tutorials/tutorialIntroduction
     tutorials/creatingNewPieces
+    tutorials/creatingBoards
     tutorials/creatingRules
     tutorials/creatingWinConditions
+    tutorials/integrateIntoExampleFrontend
 
 .. toctree::
     :maxdepth: 2
