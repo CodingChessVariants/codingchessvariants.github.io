@@ -32,9 +32,11 @@ Features
     
     tutorials/tutorialIntroduction
     tutorials/creatingNewPieces
+    tutorials/initGame
     tutorials/creatingBoards
     tutorials/creatingRules
     tutorials/creatingWinConditions
+    tutorials/finaliseGame
     tutorials/integrateIntoExampleFrontend
 
 .. toctree::

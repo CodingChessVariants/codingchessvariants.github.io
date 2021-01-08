@@ -2,85 +2,63 @@
 Creating New Pieces
 **********************
 
-Creating new pieces requires you to also provide the moves it can make, excluding special rules which are evaluated later.
+You can create new pieces easily by using move generators which give pieces their core behaviour. Special rules are applied applied to allow for special rules such as castling.
 
-Pieces that have already been implemented are those in standard chess, Capablanca Chess, Antichess, Grand chess, Xiangqi, and Janggi.
+The engine has already implemented pieces which are used in Standard Chess, Capablanca Chess, Antichess, Grand chess, Xiangqi, and Janggi. These can be easily reused in your own variants .
 
-Step 1: Implement the Piece interface
+For our chess variant, we will use the pre-implemented rook, bishop and king from Standard Chess. We will also implement our own Berlin pawn and elephant
+
+Creating The Berlin Pawn
 =======================================
-  1. If your game is 2D and uses a rectangular board, then implement the Piece2D interface
-  2. Otherwise, create a new interface that implements Piece with the appropriate board, coordinates, and moves.
-  3. If your piece is a Pawn or a King, then it should further implement the Pawn or King marker interfaces.
+The Berlin pawn is a piece which is the converse of a pawn in standard chess with a few key differences.
+  - They can move one square diagonally without capturing. 
+  - They can capture by moving one square straight forward.
+  - On their first move, they can move two squares diagonally forwards.
 
-Step 2: Implement the methods
-================================
+Create a new **tutorial** package in the engine project (engine/src/main/kotlin). We will create two classes, one to represent the Berlin white pawn and one to represent the Berlin black pawn.
 
-Option 1: (If your piece is a standard pawn)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Your piece is a standard pawn if:
-   - The game is 2D
-   - It can double move on it's first turn
-   - It pawn can usually only step once northwards-ly
-   - It can promote
-   - Can only capture north-diagonally.
-
-In this case, you can directly implement the WhitePawn class, and set custom settings for the starting row, promotion region, and the list of pieces it can promote to.
-
-Option 2: Otherwise
-^^^^^^^^^^^^^^^^^^^^^
-You must a give a list of MoveGenerators the piece can do in moveTypes. Please look at the Engine API pages for MoveGenerator for further details.
-
-We use four types of moves to describe the movement of standard chess pieces:
-    - Sliders - move along a ray direction until they encounter another piece or the edge of the board
-    - Leapers - perform single steps to specified target squares
-    - Steppers - perform single (repeated) steps in a particular board direction
-    - Hoppers - can move along a ray direction, but must jump over another piece.
-
-We also use the following conditions as wrappers to describe moves:
-    - CaptureOnly - move can only occur if it captures a piece
-    - NoCapture - move can only occur if it doesn't capture a piece
-    - Restricted - move can only occur when the piece starts in a specific region
-    - RestrictedDestination - move can only occur if the destination is within a specific region
-    - Composite - This is a wrapper around a list of basic moves to represent a composite moves.
-
-To add moves which could result in promotion, we use the 'AddPromotion' wrapper which takes in a list of moves which can results in promotion.
-
-We also include a special move 'Skip' to skip moves, such as in Janggi.
-
-For example, the standard Rook gives this as their moveTypes:
-
-.. code-block:: kotlin
+Create a file called BerlinWhitePawn.kt:
   
-  override val moveTypes: List<Move2D>
-        get() = listOf(Move2D.Slider(H = true, V = true, A = false, D = false))
+.. raw:: html
 
-This describes the rook's movements as a slider that can only move horizontally or vertically.
+  <iframe
+    src="https://carbon.now.sh/embed/9CBhCM1xOMCsazwXGUZf"
+    style="width: 826px; height: 449px; border:0; transform: scale(1); overflow:hidden;"
+    sandbox="allow-scripts allow-same-origin">
+  </iframe>
 
-For a more complicated example, WhitePawn gives this as their moveTypes:
+Each piece is defined by a list of move generators which define the different moves that the pieces can usually make.
 
-.. code-block:: kotlin
+In the case of the Berlin white pawn:
+  - The restricted stepper move denotes that the piece can move 2 steps in the north-east or north-west direction only when it is on the starting row (has not moved yet).
+  - The promotion wrapper denotes that the moves within can result in promotion to a rook, alfil, bishop or queen when the pawn reaches the 6th row.
+  - The stepper move in the add promotion wrapper denotes that the piece can move 1 step in the north-east or north-west direction.
+  - The capture-only stepper in the add promotion move denotes that the piece can move 1 step north only when it is capturing a piece.
 
-  override val moveTypes: List<Move2D> = listOf(
-          Move2D.Restricted(Move2D.Stepper(Direction.NORTH, 2), RowRegion(startingRow)),
-          Move2D.AddPromotion(
-              listOf(
-                  Move2D.Stepper(Direction.NORTH, 1),
-                  Move2D.CaptureOnly(Move2D.Stepper(Direction.NORTH_EAST, 1, true)),
-                  Move2D.CaptureOnly(Move2D.Stepper(Direction.NORTH_WEST, 1, true)),
-              ),
-              promotionRegion,
-              pawnPromotions,
-              true
-          ),
+Similarly for the black pawn, create a file called BerlinBlackPawn.kt:
+  
+.. raw:: html
 
-The first move represents that a pawn can move 2 steps north when it starts in it's starting row.
-The next moves are wrapped in AddPromotion, meaning these moves can result in promotion if they move into the PromotionRegion.
-These moves describe pawn moves for stepping north once, and for capturing in both north diagonals.
+  <iframe
+    src="https://carbon.now.sh/embed/LPlzCQchgD3SmPCdWU1u"
+    style="width: 826px; height: 449px; border:0; transform: scale(1); overflow:hidden;"
+    sandbox="allow-scripts allow-same-origin">
+  </iframe>
 
-The special rule, En Passant, is given later as a special rule.
 
-You should also provide a symbol representation for your piece. These do not need to be unique.
+Creating The Alfil
+=======================================
+The Alfil is a piece that can jump two squares diagonally and can leap over pieces.
 
-Step 3: Special Rules
-========================
-Special rules are 'special' because they can only occur under certain conditions. If your piece has a special rule, please look at the tutorial section for creating special rules.
+Create a file called Alfil.kt:
+
+.. raw:: html
+  
+  <iframe
+    src="https://carbon.now.sh/embed/9QJjNMAmeA3ank2ZfSeG"
+    style="width: 501px; height: 269px; border:0; transform: scale(1); overflow:hidden;"
+    sandbox="allow-scripts allow-same-origin">
+  </iframe>
+
+
+The Alfil is a 

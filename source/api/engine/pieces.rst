@@ -1,7 +1,10 @@
 **********************
 Pieces
 **********************
-Everything to do with pieces
+Everything to do with pieces.
+
+WhitePawn and BlackPawn can be directly overidden to change the settings for the starting row, promotion region, and the list of pieces it can promote to.
+
 
 Piece
 ==========

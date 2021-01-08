@@ -21,6 +21,8 @@ The initial setup of the board will look like as follows:
 .. figure:: /../_static/TutorialChessFigure.png
     :width: 50%
 
+The bishops and the alfils of each player start on different coloured squares.
+
 The game ends when:
   - A player wins once by taking all the opponent pawns
   - A player wins by checkmating the opponent's king.

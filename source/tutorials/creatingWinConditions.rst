@@ -82,7 +82,7 @@ override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>):
 Step 4: Overall class
 ----------------------
 The class should now look like this:
-::code-block: kotlin
+.. code-block:: kotlin
   package winconditions
 
   import gameTypes.chess.AbstractChess
