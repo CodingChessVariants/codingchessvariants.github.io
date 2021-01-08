@@ -31,4 +31,3 @@ The game ends when:
   - A player wins by checkmating the opponent
   - Stalemate by no moves for a player not in checkmate
   - Stalemate by threefold repetition
-
