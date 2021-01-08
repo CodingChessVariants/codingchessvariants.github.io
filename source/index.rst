@@ -31,11 +31,11 @@ Features
     :caption: Tutorials
     
     tutorials/tutorialIntroduction
-    tutorials/creatingBoards
-    tutorials/integrateIntoExampleFrontend
     tutorials/creatingNewPieces
+    tutorials/creatingBoards
     tutorials/creatingRules
     tutorials/creatingWinConditions
+    tutorials/integrateIntoExampleFrontend
 
 .. toctree::
     :maxdepth: 2

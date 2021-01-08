@@ -13,7 +13,7 @@ The standard pieces consist of:
   - King - moves exactly one square horizontally, vertically or diagonally and can capture opponent pieces at the destination.
 
 The variant pieces consists of:
-  - Elephant - Jumps two squares diagonally and can capture opponent pieces at the destination
+  - Alfil - Jumps two squares diagonally and can capture opponent pieces at the destination
   - Berlin Pawn - Can move two squares diagonal forwards on the first move. Moves one square diagonally without capturing or captures by moving one square forward.
 
 The initial setup of the board will look like as follows:
@@ -24,7 +24,7 @@ The rules of the game are as follows:
   - The king can be checked and must move when it is in check.
   - The same piece cannot be moved twice in a row.
   - There is no castling or enpassant.
-  - Pawns must promote to a rook, bishop or elephant once it reaches the last rank
+  - Pawns must promote to a rook, bishop or alfil once it reaches the last rank
 
 The game ends when:
   - A player wins once they takes all the opponents pawns
