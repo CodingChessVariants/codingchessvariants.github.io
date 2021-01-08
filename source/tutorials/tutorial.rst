@@ -14,7 +14,7 @@ Step 1. Create the initial setup for a new chess variant.
 
   d. Create new win conditions, or use already implemented win conditions.
 
-  e. Create new special rules (such as castling, or ), or use rules that have already been implemented.
+  e. Create new special rules (such as castling), or use rules that have already been implemented.
   
 Step 2: Add a new Game type
 ----------------------------
@@ -62,4 +62,4 @@ The initGame method should initialise the board.
 Step 3: Add the frontend
 --------------------------
 - Desktop: Integrate your own frontend or extend the existing front end to accomadate your new variant.
-- Console: Eextend the console front end to play your variant in the console. 
+- Console: Extend the console front end to play your variant in the console. 

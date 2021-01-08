@@ -87,7 +87,15 @@ Methods
 Win Conditions
 ================
 
-Represents conditions for stalemates or checkmates.
+Represents conditions for stalemates or checkmates. These are evaluated every turn to see if the game should end. The win conditions should be specified in each game type.
+The standard win conditions have already been implemented. These are:
+
+- Checkmate,
+- Stalemate by no legal moves
+- Stalemate by three-fold-repetition
+- Stalemate by the 50-move rules
+- Stalemate by insufficient material.
+
 
 Methods
 -------

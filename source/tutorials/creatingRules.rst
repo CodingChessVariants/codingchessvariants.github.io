@@ -12,7 +12,7 @@ This behaviour can be encapsualted like so:
 
  override fun getPossibleMoves(game: AbstractChess, player: Player, moves: MutableList<GameMove2D>) {
         val pred = { it: GameMove2D -> it is BasicGameMove && it.pieceCaptured != null }
-        if (moves.any(pred)) {
+        if (moves.any(pred)) { 
             moves.retainAll(pred)
         }
     }

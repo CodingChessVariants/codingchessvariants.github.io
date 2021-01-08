@@ -85,5 +85,5 @@ Adding images for newly created pieces:
 
 Extending the Console Frontend
 ===============================
-
-TODO()
+In console.src.main.kotlin, in the Chess.kt file, add your variant into the mappedVariants map.
+Running the console front end should now give the option of playing the new variant.
