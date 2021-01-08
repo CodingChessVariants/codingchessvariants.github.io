@@ -33,3 +33,5 @@ html_title = project
 # !! MARKER !!
 
 html_theme = "catalyst_sphinx_theme"
+
+html_static_path = ['_static']

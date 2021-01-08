@@ -6,7 +6,9 @@ Desktop Application
 =================================
 Prerequisites - JRE 8+ installed
 
-Download the KChess desktop application jar here and run using:
+.. only:: builder_html
+
+  Download the KChess desktop application jar here and run using:
 
 .. code:: bash
 
