@@ -4,7 +4,7 @@ Creating Special Rules
 Special rules are 'special' because they can only occur under certain conditions. For example, Castling which can only occur if the king and rook have not moved from their initial positions.
 
 In our variant, the unique special rule is that a player cannot move the same piece twice in a row. These rules are applied when we fetch the moves a player can make to either filter the moves, or add furthr special moves.
-In this case, we are restricting the moves a player can make by removing the moves which move the same piece the player move previously.
+In this case, we are restricting the moves a player can make by removing the moves which move the same piece the player moved previously.
 
 
 Step 1: Implement the SpecialRules interface

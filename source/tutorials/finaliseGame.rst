@@ -11,10 +11,10 @@ Go back to the TutorialChess class you created. The constructor should look like
                                       listOf()
     )
 
-As we have created the unique special rules and win conditions, we can add these as parameters to AbstractChess.
+As we have created the unique special rules and win conditions, we can now add these as parameters to AbstractChess.
 
 Step 1. Add Special Rules
--------------------
+----------------------------
 There is only one special rule that needs to be added which is the one we created previously, NoRepeatedMoveFromSamePieceRule.
 We can add this like so:
 
@@ -25,8 +25,8 @@ We can add this like so:
                                     listOf()
   )
 
-Step 2. Add Special Rules
--------------------
+Step 2. Add Win Conditions
+-----------------------------
 There is one unique win condition that needs to be added which is the one we created previously, AllPawnsCapturedWinCondition.
 We can add this like so:
 
@@ -48,7 +48,7 @@ We can add these like so:
 
   open class TutorialChess : AbstractChess(
                                     listOf(NoRepeatedMoveFromSamePieceRule()),
-                                    listOf(Checkmate(), TutorialWinCondition(), ThreeFoldRepetitionStalemate(), NoLegalMovesStalemate())
+                                    listOf(Checkmate(), AllPawnsCapturedWinCondition(), ThreeFoldRepetitionStalemate(), NoLegalMovesStalemate())
   )
 
 Step 3. Overall
@@ -68,7 +68,7 @@ The final class should look like this:
   import winconditions.NoLegalMovesStalemate
   import winconditions.ThreeFoldRepetitionStalemate
 
-  open class TutorialChess : AbstractChess(listOf(NoRepeatedMoveFromSamePieceRule()), listOf(Checkmate(), TutorialWinCondition(), ThreeFoldRepetitionStalemate(), NoLegalMovesStalemate())) {
+  open class TutorialChess : AbstractChess(listOf(NoRepeatedMoveFromSamePieceRule()), listOf(Checkmate(), AllPawnsCapturedWinCondition(), ThreeFoldRepetitionStalemate(), NoLegalMovesStalemate())) {
       private val outOfBoundsRegion = CoordinateRegion(3, 3)
       override val board: Board2D = Board2D(7, 7, outOfBoundsRegion)
       override val name = "Tutorial Chess"

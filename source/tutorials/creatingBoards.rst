@@ -96,7 +96,7 @@ The rest of the pieces can be added like so.
 
     board.addPiece(Coordinate2D(3, 0), King(player1))
     board.addPiece(Coordinate2D(3, 6), King(player2))
-}
+  }
 
 Step 3: Overall
 -----------------

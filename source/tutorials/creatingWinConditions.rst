@@ -10,23 +10,19 @@ The win conditions for this chess variant are:
 
 The first is a new win condition specific to this variant which we will implement here, and the remaining three are pre-existing standard win conditions.
 
-Step 1: Navigate to the WinConditions directory
---------------------------------------------------
-This can be found in engine.src.main.kotlin.winconditions
-
-Step 2: Create a new file
+Step 1: Create a new file
 ----------------------------
-1. Create a new file called "AllPawnsCapturedWinCondition.kt"
-2. Add a class called AllPawnsCapturedWinCondition which implements the WinCondition2D<AbstractChess> interface
+1. Create a new file called "AllPawnsCapturedWinCondition.kt" in the Tutorial package.
+2. Create a class called AllPawnsCapturedWinCondition which implements the WinCondition2D<AbstractChess> interface
 
 .. code-block:: kotlin 
 
-  package winconditions
+  package tutorial
 
   import gameTypes.chess.AbstractChess
   import winconditions.WinCondition2D
 
-  class TutorialWinCondition : WinCondition2D<AbstractChess> {
+  class AllPawnsCapturedWinCondition : WinCondition2D<AbstractChess> {
     // Leave this empty for now.
   }
 
@@ -58,29 +54,33 @@ If this expression is false, then we must return a win outcome for the other pla
     }
   }
 
-We need to check both players as a player could lose their own pawns by promoting it to another piece.
+We need to check both players as:
+  - The current player could win by taking the final pawn of their opponent.
+  - The other player could win by the current player promoting their final pawn to another piece.
 
 .. code-block:: kotlin
 
-override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
-  for (p in game.players) {
-    if (!game.board.getPieces(p).any { piece -> piece.first is Pawn }) {
-      return Outcome.Win(game.getOpponentPlayer(p), "by opponent losing all pawns")
+  override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
+    for (p in game.players) {
+      if (!game.board.getPieces(p).any { piece -> piece.first is Pawn }) {
+        return Outcome.Win(game.getOpponentPlayer(p), "by opponent losing all pawns")
+      }
     }
   }
-}
 
 If the condition is not satisfied for either player, we return null. This gives us the final evaluate function. 
 
-override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
-  for (p in game.players) {
-    if (!game.board.getPieces(p).any { piece -> piece.first is Pawn }) {
-      return Outcome.Win(game.getOpponentPlayer(p), "by opponent losing all pawns")
-    }
-  }
+..code-block:: kotlin
 
-  return null
-}
+  override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
+    for (p in game.players) {
+      if (!game.board.getPieces(p).any { piece -> piece.first is Pawn }) {
+        return Outcome.Win(game.getOpponentPlayer(p), "by opponent losing all pawns")
+      }
+    }
+
+    return null
+  }
 
 Step 4: Overall class
 ----------------------
@@ -88,12 +88,12 @@ The class should now look like this:
 
 .. code-block:: kotlin
 
-  package winconditions
+  package tutorial
 
   import gameTypes.chess.AbstractChess
   import winconditions.WinCondition2D
 
-  class TutorialWinCondition : WinCondition2D<AbstractChess> {
+  class AllPawnsCapturedWinCondition : WinCondition2D<AbstractChess> {
     override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
       for (p in game.players) {
         if (!game.board.getPieces(p).any { piece -> piece.first is Pawn }) {

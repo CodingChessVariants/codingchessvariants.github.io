@@ -10,12 +10,14 @@ The engine provides an interface to easily attach a frontend.
 
 There is an example front end already implemented as part of the engine which can be adapted to account for any extensions or changes to the library.
 
-For our variant, we can extend this example desktop front end to play our game!
+For our variant, we can extend this example desktop front end to play our game.
 
 Step 1: Add images for new pieces
 -------------------------------------
 The Berlin Pawn can use the same image as a standard pawn which is already included in the library.
-The Alfil is usually represented as an elephant. Navigate to the core.assets folder, and add these two images inside of it. Name them whiteAlfil.png and blackAlfil.png as appropriate.
+The Alfil is usually represented as an elephant.
+
+Navigate to the core.assets folder, and add these two images inside of it. Name them whiteAlfil.png and blackAlfil.png as appropriate.
 
 .. figure:: /../_static/whiteAlfil.png
     :width: 70%
@@ -72,7 +74,6 @@ Step 4: Add the button for the variant in the menu screen
 2. Add TutorialChess to the chessTypes mapping like so:
 
 .. code-block:: kotlin
-
   :emphasize-lines: 13
 
   val chessTypes = mapOf(
@@ -88,8 +89,8 @@ Step 4: Add the button for the variant in the menu screen
     checkersGameButton to Checkers(),
     playgroundButton to ChessPlayground(),
     tutorialButton to TutorialChess()
-)
+  )
 
-Good job
+yay
 -----------
 Now when you start up the desktop applciation, you should be able to see an option for the variant you've created and be able to play it. 
