@@ -31,6 +31,7 @@ Step 2: Implement the getPossibleMoves() method
 ===================================================
 This function should modify the given moves list by removing all the moves that contain the piece that the player moved previously.
 We can get the move the player previously made like so:
+
 .. code-block:: kotlin
 
     val prevMove = game.moveLog[game.moveLog.size - 2]
@@ -50,6 +51,7 @@ This means we can easily remove the moves where the same piece is moved like so:
 Step 3: Overall
 =================
 The NoRepeatedMoveFromSamePieceRule class should now look like this.
+
 .. code-block:: kotlin
 
     package tutorial

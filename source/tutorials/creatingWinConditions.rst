@@ -20,6 +20,7 @@ Step 2: Create a new file
 2. Add a class called AllPawnsCapturedWinCondition which implements the WinCondition2D<AbstractChess> interface
 
 .. code-block:: kotlin 
+
   package winconditions
 
   import gameTypes.chess.AbstractChess
@@ -32,6 +33,7 @@ Step 2: Create a new file
 Step 3: Implement the evaluate method
 ----------------------------------------
 Now we implement the evaluate method. We want to return a win outcome for the other player if the player being evaluated has lost all their pawns, and null otherwise.
+
 .. code-block:: kotlin
 
   override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
@@ -39,6 +41,7 @@ Now we implement the evaluate method. We want to return a win outcome for the ot
   }
 
 We need to check if the player has any pawns which we can do by evaluating this expression:
+
 .. code-block:: kotlin
 
   game.board.getPieces(player).any { piece -> piece.first is Pawn })
@@ -82,7 +85,9 @@ override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>):
 Step 4: Overall class
 ----------------------
 The class should now look like this:
+
 .. code-block:: kotlin
+
   package winconditions
 
   import gameTypes.chess.AbstractChess

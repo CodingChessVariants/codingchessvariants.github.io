@@ -36,10 +36,17 @@ The rules of the game are as follows:
   - Pawns must promote to a queen, rook, bishop or alfil once it reaches the last rank. This carries risk as it means a pawn is lost, and therefore the opponent needs to capture one less pawn, but rewards the player by giving them a much more powerful piece.
 
 The steps are as follows (please navigate to the specific tutorial pages!)
+
 1. Create the fairy pieces.
+
 2. Initialise the game.
+
 3. Set up the board.
+
 4. Create the special rules.
+
 5. Create the special win conditions.
+
 6. Add the rules and win conditions into the game.
+
 7. Integrate into the desktop frontend.

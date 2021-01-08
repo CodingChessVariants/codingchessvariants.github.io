@@ -19,4 +19,4 @@ Create an open class called "TutorialChess" that implements the AbstractChess in
     }
   }
 
-Leave the parameters for AbstractChess as empty lists for now - These parameters will later be the special rules and win conditions for our variant!
+Leave the parameters for AbstractChess as empty lists for now - These parameters will later be the special rules and win conditions for our variant.

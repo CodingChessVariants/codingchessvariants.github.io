@@ -16,6 +16,7 @@ Step 1: Add images for new pieces
 -------------------------------------
 The Berlin Pawn can use the same image as a standard pawn which is already included in the library.
 The Alfil is usually represented as an elephant. Navigate to the core.assets folder, and add these two images inside of it. Name them whiteAlfil.png and blackAlfil.png as appropriate.
+
 .. figure:: /../_static/whiteAlfil.png
     :width: 70%
 
@@ -71,6 +72,7 @@ Step 4: Add the button for the variant in the menu screen
 2. Add TutorialChess to the chessTypes mapping like so:
 
 .. code-block:: kotlin
+
   :emphasize-lines: 13
 
   val chessTypes = mapOf(

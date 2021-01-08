@@ -3,6 +3,7 @@ Set up Board
 ***************************
 
 Right now, your TutorialChess.kt should look like this:
+
 .. code-block:: kotlin 
 
   package tutorial
@@ -31,6 +32,7 @@ Our restriction for the board is that the centre square is out of bounds. This c
   private val outOfBoundsRegion = CoordinateRegion(3, 3)
 
 Our variant uses a 7x7 board, and therefore can be defined like so:
+
 .. code-block:: kotlin
 
   private val outOfBoundsRegion = CoordinateRegion(3, 3)
@@ -41,6 +43,7 @@ Step 2: Implementing initBoard()
 ------------------------------------
 This function should setup the initial piece placements and is called everytime this game is started.
 Put each player into a variable for ease of use.
+
 .. code-block:: kotlin
 
   override fun initBoard() {
@@ -51,6 +54,7 @@ Put each player into a variable for ease of use.
 1. Adding Pawns
 ^^^^^^^^^^^^^^^^^
 We can add the Berlin Pawns to the board with a for loop like so:
+
 .. code-block:: kotlin
 
   override fun initBoard() {
@@ -65,6 +69,7 @@ We can add the Berlin Pawns to the board with a for loop like so:
 2. Adding the backline pieces
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The rest of the pieces can be added like so.
+
 .. code-block:: kotlin
 
   override fun initBoard() {
@@ -97,6 +102,7 @@ Step 3: Overall
 -----------------
 
 .. code-block:: kotlin
+
   package tutorial
 
   import boards.Board2D

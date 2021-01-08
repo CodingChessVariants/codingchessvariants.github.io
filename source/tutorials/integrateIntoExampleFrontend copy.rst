@@ -93,12 +93,16 @@ Once you have created your chess variant class, you can make it playable by the 
 Adding a game type:
 ^^^^^^^^^^^^^^^^^^^^
   1. In console.src.main.kotlin.Chess.kt, create a val chess to store your chosen chess varian class. Specify the number and type of players (HumanConsolePlayer or ComputerConsolePlayer). An example for Capablanca Chess with two Human Players:
+  
   .. code-block:: kotlin
+
     val chess: AbstractChess = CapablancaChess()
     val player1 = HumanConsolePlayer(ChessNotationInput(), chess, chess.players[0])
     val player2 = HumanConsolePlayer(ChessNotationInput(), chess, chess.players[1])
 
   2. Call start() on ConsoleGameHelper with your selected game type and player:
+
   .. code-block:: kotlin
+  
     val game = ConsoleGameHelper(chess, player1, player2)
     game.start()
