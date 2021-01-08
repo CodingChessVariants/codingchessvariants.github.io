@@ -39,7 +39,7 @@ Our variant uses a 7x7 board, and therefore can be defined like so:
 
 Step 2: Implementing initBoard()
 ------------------------------------
-This function should setup the initial pieces and their coordinates.
+This function should setup the initial piece placements and is called everytime this game is started.
 Put each player into a variable for ease of use.
 .. code-block:: kotlin
 
