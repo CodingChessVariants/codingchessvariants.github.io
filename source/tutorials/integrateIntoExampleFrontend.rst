@@ -17,17 +17,17 @@ Step 1: Add images for new pieces
 The Berlin Pawn can use the same image as a standard pawn which is already included in the library.
 The Alfil is usually represented as an elephant.
 
-Navigate to the core.assets folder, and add these two images inside of it. Name them whiteAlfil.png and blackAlfil.png as appropriate.
+Navigate to the core.assets folder, and add these two images inside of it. Name them WhiteAlfil.png and BlackAlfil.png as appropriate.
 
-.. figure:: /../_static/whiteAlfil.png
+.. figure:: /../_static/WhiteAlfil.png
     :width: 70%
 
-    whiteAlfil
+    WhiteAlfil
 
-.. figure:: /../_static/blackAlfil.png
+.. figure:: /../_static/BlackAlfil.png
     :width: 70%
 
-    blackAlfil
+    BlackAlfil
 
 Step 2: Map these images to textures
 ----------------------------------------

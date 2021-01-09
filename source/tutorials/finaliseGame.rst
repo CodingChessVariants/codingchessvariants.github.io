@@ -1,5 +1,5 @@
 ========================
-Finalise Game
+Completing the Game
 ========================
 
 Go back to the TutorialChess class you created. The constructor should look like this. 
