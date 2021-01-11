@@ -19,12 +19,12 @@ The Alfil is usually represented as an elephant.
 
 Navigate to the core.assets folder, and add these two images inside of it. Name them whiteAlfil.png and blackAlfil.png as appropriate.
 
-.. figure:: /../_static/whiteAlfil.png
+.. figure:: /../_static/WhiteAlfil.png
     :width: 70%
 
     whiteAlfil
 
-.. figure:: /../_static/blackAlfil.png
+.. figure:: /../_static/BlackAlfil.png
     :width: 70%
 
     blackAlfil
