@@ -51,6 +51,9 @@ Features
     api/engine/pieces
     api/engine/players
     api/engine/utils
+    api/engine/apiDocumentation
+    `Engine API <_static/dokka/html/engine/index.html>`_
+    
 
 .. toctree::
     :maxdepth: 2
