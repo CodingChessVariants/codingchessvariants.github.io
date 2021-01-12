@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating Boards &mdash; Coding Chess Variants Docs</title>
+  <title>Set up Board &mdash; Coding Chess Variants Docs</title>
   
 
   
@@ -29,8 +29,8 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Integrating Into a Frontend" href="integrateIntoExampleFrontend.html" />
-    <link rel="prev" title="Tutorial" href="tutorial.html" /> 
+    <link rel="next" title="Creating Special Rules" href="creatingRules.html" />
+    <link rel="prev" title="Initialise the game variant" href="initGame.html" /> 
 
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167094275-1"></script>
@@ -128,37 +128,33 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Coding Chess Variants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">User Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/developerSetup.html">Developer Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingStarted/supportedVariants.html">Supported Variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quickstart</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating Boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingNewPieces.html">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finaliseGame.html">Completing the Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Engine API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/boards.html">Boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/coordinates.html">Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameMoves.html">Game Moves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/moves.html">Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/moveGenerators.html">Move Generators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/pieces.html">Pieces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../demo/api.html">API documentation and generated content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/demo.html">Paragraph Level Markup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/lists_tables.html">Lists &amp; Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html">Structural Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/api.html">API documentation</a></li>
 </ul>
 
             
@@ -199,7 +195,7 @@
       </li>
 
         
-      <li>Creating Boards</li>
+      <li>Set up Board</li>
     
     
       <li class="catalyst-breadcrumbs-aside">
@@ -229,10 +225,142 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="catalyst-article" class="catalyst-article">
               
-  <div class="section" id="creating-boards">
-<h1>Creating Boards<a class="headerlink" href="#creating-boards" title="Permalink to this headline">¶</a></h1>
-<p>Board2D has already been implemented. If your game is 2D and rectangular, you may just use this board. Otherwise, you will need to create your own board.</p>
-<p>To create your own board, implement the Board interface. Please refer to the Board Engine API pages for details on how to implement the methods.</p>
+  <div class="section" id="set-up-board">
+<h1>Set up Board<a class="headerlink" href="#set-up-board" title="Permalink to this headline">¶</a></h1>
+<p>Right now, your TutorialChess.kt should look like this:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
+
+<span class="k">import</span> <span class="nn">boards.Board2D</span>
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
+<span class="k">open</span> <span class="k">class</span> <span class="nc">TutorialChess</span> <span class="p">:</span> <span class="n">AbstractChess</span><span class="p">(</span>
+                                  <span class="n">listOf</span><span class="p">(),</span>
+                                  <span class="n">listOf</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">override</span> <span class="k">val</span> <span class="py">board</span><span class="p">:</span> <span class="n">Board2D</span> <span class="p">=</span> <span class="n">TODO</span><span class="p">()</span>
+  <span class="k">override</span> <span class="k">val</span> <span class="py">name</span> <span class="p">=</span> <span class="s">&quot;Tutorial Chess&quot;</span>
+
+  <span class="k">override</span> <span class="k">fun</span> <span class="nf">initBoard</span><span class="p">()</span> <span class="p">{</span>
+      <span class="n">TODO</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="step-1-creating-a-board">
+<h2>Step 1: Creating a board<a class="headerlink" href="#step-1-creating-a-board" title="Permalink to this headline">¶</a></h2>
+<p>Since our variant uses a 2D rectangular based board, we can use the Board2D interface to create the board.
+Our restriction for the board is that the centre square is out of bounds. This can be defined by a coordinate region like so:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">private</span> <span class="k">val</span> <span class="py">outOfBoundsRegion</span> <span class="p">=</span> <span class="n">CoordinateRegion</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Our variant uses a 7x7 board, and therefore can be defined like so:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">private</span> <span class="k">val</span> <span class="py">outOfBoundsRegion</span> <span class="p">=</span> <span class="n">CoordinateRegion</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="k">override</span> <span class="k">val</span> <span class="py">board</span><span class="p">:</span> <span class="n">Board2D</span> <span class="p">=</span> <span class="n">Board2D</span><span class="p">(</span><span class="m">7</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="n">outOfBoundsRegion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-implementing-initboard">
+<h2>Step 2: Implementing initBoard()<a class="headerlink" href="#step-2-implementing-initboard" title="Permalink to this headline">¶</a></h2>
+<p>This function should setup the initial piece placements and is called everytime this game is started.
+Put each player into a variable for ease of use.</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">initBoard</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+    <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="adding-pawns">
+<h3>1. Adding Pawns<a class="headerlink" href="#adding-pawns" title="Permalink to this headline">¶</a></h3>
+<p>We can add the Berlin Pawns to the board with a for loop like so:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">initBoard</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+    <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="m">6</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">BerlinWhitePawn</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="n">BerlinBlackPawn</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-the-backline-pieces">
+<h3>2. Adding the backline pieces<a class="headerlink" href="#adding-the-backline-pieces" title="Permalink to this headline">¶</a></h3>
+<p>The rest of the pieces can be added like so.</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">initBoard</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+  <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="m">6</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">BerlinWhitePawn</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+      <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="n">BerlinBlackPawn</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+  <span class="p">}</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">King</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">King</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-3-overall">
+<h2>Step 3: Overall<a class="headerlink" href="#step-3-overall" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
+
+<span class="k">import</span> <span class="nn">boards.Board2D</span>
+<span class="k">import</span> <span class="nn">coordinates.Coordinate2D</span>
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
+<span class="k">import</span> <span class="nn">pieces.chess.*</span>
+<span class="k">import</span> <span class="nn">regions.CoordinateRegion</span>
+
+<span class="k">open</span> <span class="k">class</span> <span class="nc">TutorialChess</span> <span class="p">:</span> <span class="n">AbstractChess</span><span class="p">(</span>
+                                  <span class="n">listOf</span><span class="p">(),</span>
+                                  <span class="n">listOf</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">val</span> <span class="py">outOfBoundsRegion</span> <span class="p">=</span> <span class="n">CoordinateRegion</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+    <span class="k">override</span> <span class="k">val</span> <span class="py">board</span><span class="p">:</span> <span class="n">Board2D</span> <span class="p">=</span> <span class="n">Board2D</span><span class="p">(</span><span class="m">7</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="n">outOfBoundsRegion</span><span class="p">)</span>
+    <span class="k">override</span> <span class="k">val</span> <span class="py">name</span> <span class="p">=</span> <span class="s">&quot;Tutorial Chess&quot;</span>
+
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">initBoard</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+        <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="m">6</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">BerlinWhitePawn</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+            <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="n">BerlinBlackPawn</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+        <span class="p">}</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">King</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">King</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -243,10 +371,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="integrateIntoExampleFrontend.html" class="btn btn-neutral float-right" title="Integrating Into a Frontend" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="creatingRules.html" class="btn btn-neutral float-right" title="Creating Special Rules" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="tutorial.html" class="btn btn-neutral" title="Tutorial" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="initGame.html" class="btn btn-neutral" title="Initialise the game variant" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -274,7 +402,16 @@
           <div class="catalyst-right-menu" id="catalyst-right-menu">
             <div class="catalyst-side-scroll" id="catalyst-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Creating Boards</a></li>
+<li><a class="reference internal" href="#">Set up Board</a><ul>
+<li><a class="reference internal" href="#step-1-creating-a-board">Step 1: Creating a board</a></li>
+<li><a class="reference internal" href="#step-2-implementing-initboard">Step 2: Implementing initBoard()</a><ul>
+<li><a class="reference internal" href="#adding-pawns">1. Adding Pawns</a></li>
+<li><a class="reference internal" href="#adding-the-backline-pieces">2. Adding the backline pieces</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-3-overall">Step 3: Overall</a></li>
+</ul>
+</li>
 </ul>
 
             </div>

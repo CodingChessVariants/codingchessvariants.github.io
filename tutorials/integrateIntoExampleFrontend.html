@@ -29,8 +29,8 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating New Pieces" href="creatingNewPieces.html" />
-    <link rel="prev" title="Creating Boards" href="creatingBoards.html" /> 
+    <link rel="next" title="Boards" href="../api/engine/boards.html" />
+    <link rel="prev" title="Completing the Game" href="finaliseGame.html" /> 
 
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167094275-1"></script>
@@ -128,37 +128,33 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Coding Chess Variants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">User Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/developerSetup.html">Developer Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingStarted/supportedVariants.html">Supported Variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quickstart</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Creating Boards</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingNewPieces.html">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finaliseGame.html">Completing the Game</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Integrating Into a Frontend</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Engine API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/boards.html">Boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/coordinates.html">Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameMoves.html">Game Moves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/moves.html">Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/moveGenerators.html">Move Generators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/pieces.html">Pieces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../demo/api.html">API documentation and generated content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/demo.html">Paragraph Level Markup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/lists_tables.html">Lists &amp; Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html">Structural Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/api.html">API documentation</a></li>
 </ul>
 
             
@@ -232,112 +228,93 @@
   <div class="section" id="integrating-into-a-frontend">
 <h1>Integrating Into a Frontend<a class="headerlink" href="#integrating-into-a-frontend" title="Permalink to this headline">¶</a></h1>
 <p>The engine provides an interface to easily attach a frontend.</p>
-<div class="figure align-default" id="id2">
+<div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../_static/images/chess-ingame.png"><img alt="../_static/images/chess-ingame.png" src="../_static/images/chess-ingame.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-text">Provided example front end</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Provided example front end</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>There is an example front end already implemented as part of the engine which can be adapted to account for any extensions or changes to the library.</p>
-<p>For full details on the interface exposed by the game type, please look at the specific Engine API pages.</p>
-<div class="section" id="game-management">
-<h2>Game Management<a class="headerlink" href="#game-management" title="Permalink to this headline">¶</a></h2>
-<p>Running a chess game is simple.</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="py">game</span> <span class="p">=</span> <span class="n">StandardChess</span><span class="p">()</span>
+<p>For our variant, we can extend this example desktop front end to play our game.</p>
+<div class="section" id="step-1-add-images-for-new-pieces">
+<h2>Step 1: Add images for new pieces<a class="headerlink" href="#step-1-add-images-for-new-pieces" title="Permalink to this headline">¶</a></h2>
+<p>The Berlin Pawn can use the same image as a standard pawn which is already included in the library.
+The Alfil is usually represented as an elephant.</p>
+<p>Navigate to the core.assets folder, and add these two images inside of it. Name them WhiteAlfil.png and BlackAlfil.png as appropriate.</p>
+<div class="figure align-default" id="id2">
+<a class="reference internal image-reference" href="../_static/WhiteAlfil.png"><img alt="../_static/WhiteAlfil.png" src="../_static/WhiteAlfil.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">WhiteAlfil</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id3">
+<a class="reference internal image-reference" href="../_static/BlackAlfil.png"><img alt="../_static/BlackAlfil.png" src="../_static/BlackAlfil.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-text">BlackAlfil</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="step-2-map-these-images-to-textures">
+<h2>Step 2: Map these images to textures<a class="headerlink" href="#step-2-map-these-images-to-textures" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Navigate to core.src.com.mygdx.game.assets</p></li>
+<li><p>In TextureAssets.kt, add new enums for the BlackAlfil and WhiteAlfil with a path to the image.</p></li>
+</ol>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="k">class</span> <span class="nc">TextureAssets</span><span class="p">(</span><span class="k">val</span> <span class="py">path</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="p">{</span>
 
-<span class="k">while</span> <span class="p">(!</span><span class="n">game</span><span class="p">.</span><span class="n">isOver</span><span class="p">())</span> <span class="p">{</span>
-    <span class="k">val</span> <span class="py">move</span> <span class="p">=</span> <span class="p">...</span>
-    <span class="n">game</span><span class="p">.</span><span class="n">playerMakeMove</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
+    <span class="p">...</span>
+
+    <span class="n">WhiteAlfil</span><span class="p">(</span><span class="s">&quot;WhiteAlfil.png&quot;</span><span class="p">),</span>
+    <span class="n">BlackAlfil</span><span class="p">(</span><span class="s">&quot;BlackAlfil.png&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="attaching-your-own-front-end">
-<h2>Attaching your own front end<a class="headerlink" href="#attaching-your-own-front-end" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Creating a game type, for example StandardChess().</p></li>
-<li><p>You do not need a front-end player, but if you want to add further information such as usernames, colour of player etc., you may find it useful to add this. You can either use the pre-implemented front-end-player, or create your own. These can be mapped to the engine implementation of the players for ease of use.</p></li>
-<li><p>Call initGame() on the game instance once all the parameters have been set up.</p></li>
-<li><p>You can get the possible moves for a player like so: getValidMoves(player), and to trigger the engine to make a move, you can use playerMakeMove(move). The engine will change the turns of the players for you.</p></li>
-<li><p>You can check if a game is over by calling isOver(), and find the outcome (Stalemate, Checkmate, etc.) by calling GetOutCome().</p></li>
+<ol class="arabic simple" start="3">
+<li><p>In Textures.kt, add new variables for the WhiteAlfil and BlackAlfil textures</p></li>
 </ol>
-</div></blockquote>
-<dl class="simple">
-<dt>The board, moveLog, backend players can be retrieved from the engine:</dt><dd><ol class="arabic simple">
-<li><p>Board: board field in GameType</p></li>
-<li><p>Players: players field in GameType</p></li>
-<li><p>Move Log: moveLog field in GameType</p></li>
-<li><p>Current player: Call getCurrentPlayer()</p></li>
-<li><p>Next Player: Call getNextPlayer()</p></li>
-</ol>
-</dd>
-</dl>
-<p>It is easy to add metadata to the front end based on the interface provided, for example clock options (which have been implemented as demonstration).</p>
-</div>
-<div class="section" id="extending-the-provided-desktop-front-end">
-<h2>Extending the provided desktop front end<a class="headerlink" href="#extending-the-provided-desktop-front-end" title="Permalink to this headline">¶</a></h2>
-<p>You can add a game type you have created by adding a button for it into MenuScreen.kt.</p>
-<div class="section" id="adding-a-game-type">
-<h3>Adding a game type:<a class="headerlink" href="#adding-a-game-type" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>In core.src.screens.MenuScreen.kt, create a button like so:</p></li>
-</ol>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="py">sampleButton</span> <span class="p">=</span> <span class="n">TextButton</span><span class="p">(</span><span class="s">&quot;sample&quot;</span><span class="p">,</span> <span class="n">skin</span><span class="p">)</span>
-
-<span class="n">sampleButton</span><span class="p">.</span><span class="n">addListener</span><span class="p">(</span><span class="k">object</span> <span class="p">:</span> <span class="nc">ChangeListener</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">override</span> <span class="k">fun</span> <span class="nf">changed</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">ChangeEvent</span><span class="p">?,</span> <span class="n">actor</span><span class="p">:</span> <span class="n">Actor</span><span class="p">?)</span> <span class="p">{</span>
-      <span class="n">selectChessType</span><span class="p">(</span><span class="n">sampleButton</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">})</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="py">blackAlfil</span> <span class="p">=</span> <span class="n">assets</span><span class="p">[</span><span class="n">TextureAssets</span><span class="p">.</span><span class="n">BlackAlfil</span><span class="p">]</span>
+<span class="k">val</span> <span class="py">whiteAlfil</span> <span class="p">=</span> <span class="n">assets</span><span class="p">[</span><span class="n">TextureAssets</span><span class="p">.</span><span class="n">WhiteAlfil</span><span class="p">]</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Add this button and your game type into the chessTypes map.</p></li>
+</div>
+<div class="section" id="step-3-map-textures-to-pieces">
+<h2>Step 3: Map textures to pieces<a class="headerlink" href="#step-3-map-textures-to-pieces" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Navigate to core.src.com.mygdx.game.assets.Textures.kt</p></li>
+<li><p>In the ‘whites’ mapping, add the following mappings:</p></li>
 </ol>
-</div></blockquote>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">Alfil</span><span class="o">::</span><span class="k">class</span> <span class="nc">to</span> <span class="n">whiteAlfil</span><span class="p">,</span>
+<span class="n">BerlinWhitePawn</span><span class="o">::</span><span class="k">class</span> <span class="nc">to</span> <span class="n">whitePawn</span><span class="p">,</span>
+</pre></div>
 </div>
-<div class="section" id="adding-a-board">
-<h3>Adding a board:<a class="headerlink" href="#adding-a-board" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>If your board is a variation of the standard chess board (rectangular squares), or the Xiangqi board, then you can simple use boards that have already been implemented and skip to Step 3.</p></li>
-<li><p>Create a board that implements GUIBoard, and implement the method drawBoard().</p></li>
-<li><p>In GameScreen, map the board you require to your game type.</p></li>
+<ol class="arabic simple" start="3">
+<li><p>In the ‘blacks’ mapping, add the following mappings:</p></li>
 </ol>
-</div></blockquote>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">Alfil</span><span class="o">::</span><span class="k">class</span> <span class="nc">to</span> <span class="n">blackAlfil</span><span class="p">,</span>
+<span class="n">BerlinBlackPawn</span><span class="o">::</span><span class="k">class</span> <span class="nc">to</span> <span class="n">blackPawn</span><span class="p">,</span>
+</pre></div>
 </div>
-<div class="section" id="adding-images-for-newly-created-pieces">
-<h3>Adding images for newly created pieces:<a class="headerlink" href="#adding-images-for-newly-created-pieces" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>In core.assets, add the image for any new pieces.</p></li>
-<li><p>In core.src.com.mygdx.game.assets.TexttureAssets.kt, create a new enum using the path to the image you want.</p></li>
-<li><p>In core.src.com.mygdx.game.assets.Assets.kt, create a texture from the enum, and add the piece and texture to the piece mappings.</p></li>
+</div>
+<div class="section" id="step-4-add-the-button-for-the-variant-in-the-menu-screen">
+<h2>Step 4: Add the button for the variant in the menu screen<a class="headerlink" href="#step-4-add-the-button-for-the-variant-in-the-menu-screen" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Navigate to core.src.screens.MenuScreen.</p></li>
+<li><p>Add TutorialChess to the chessTypes mapping like so:</p></li>
 </ol>
-</div></blockquote>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="py">chessTypes</span> <span class="p">=</span> <span class="n">mapOf</span><span class="p">(</span>
+  <span class="n">standardChessButton</span> <span class="n">to</span> <span class="n">StandardChess</span><span class="p">(),</span>
+  <span class="n">grandChessButton</span> <span class="n">to</span> <span class="n">GrandChess</span><span class="p">(),</span>
+  <span class="n">capablancaChessButton</span> <span class="n">to</span> <span class="n">CapablancaChess</span><span class="p">(),</span>
+  <span class="n">chess960Button</span> <span class="n">to</span> <span class="n">Chess960</span><span class="p">(),</span>
+  <span class="n">janggiButton</span> <span class="n">to</span> <span class="n">Janggi</span><span class="p">(),</span>
+  <span class="n">xiangqiButton</span> <span class="n">to</span> <span class="n">Xiangqi</span><span class="p">(),</span>
+  <span class="n">antiChessButton</span> <span class="n">to</span> <span class="n">AntiChess</span><span class="p">(),</span>
+  <span class="n">miniChessButton</span> <span class="n">to</span> <span class="n">MiniChess</span><span class="p">(),</span>
+  <span class="n">balbosGameButton</span> <span class="n">to</span> <span class="n">BalbosGame</span><span class="p">(),</span>
+  <span class="n">checkersGameButton</span> <span class="n">to</span> <span class="n">Checkers</span><span class="p">(),</span>
+  <span class="n">playgroundButton</span> <span class="n">to</span> <span class="n">ChessPlayground</span><span class="p">(),</span>
+<span class="hll">  <span class="n">tutorialButton</span> <span class="n">to</span> <span class="n">TutorialChess</span><span class="p">()</span>
+</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="extending-the-console-frontend">
-<h2>Extending the Console Frontend<a class="headerlink" href="#extending-the-console-frontend" title="Permalink to this headline">¶</a></h2>
-<p>Once you have created your chess variant class, you can make it playable by the console by navigating to Chess.kt</p>
-<div class="section" id="id1">
-<h3>Adding a game type:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><p>1. In console.src.main.kotlin.Chess.kt, create a val chess to store your chosen chess varian class. Specify the number and type of players (HumanConsolePlayer or ComputerConsolePlayer). An example for Capablanca Chess with two Human Players:
-.. code-block:: kotlin</p>
-<blockquote>
-<div><p>val chess: AbstractChess = CapablancaChess()
-val player1 = HumanConsolePlayer(ChessNotationInput(), chess, chess.players[0])
-val player2 = HumanConsolePlayer(ChessNotationInput(), chess, chess.players[1])</p>
-</div></blockquote>
-<p>2. Call start() on ConsoleGameHelper with your selected game type and player:
-.. code-block:: kotlin</p>
-<blockquote>
-<div><p>val game = ConsoleGameHelper(chess, player1, player2)
-game.start()</p>
-</div></blockquote>
-</div></blockquote>
-</div>
+<div class="section" id="yay">
+<h2>yay<a class="headerlink" href="#yay" title="Permalink to this headline">¶</a></h2>
+<p>Now when you start up the desktop applciation, you should be able to see an option for the variant you’ve created and be able to play it.</p>
 </div>
 </div>
 
@@ -349,10 +326,10 @@ game.start()</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="creatingNewPieces.html" class="btn btn-neutral float-right" title="Creating New Pieces" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="../api/engine/boards.html" class="btn btn-neutral float-right" title="Boards" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="creatingBoards.html" class="btn btn-neutral" title="Creating Boards" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="finaliseGame.html" class="btn btn-neutral" title="Completing the Game" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -381,18 +358,11 @@ game.start()</p>
             <div class="catalyst-side-scroll" id="catalyst-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">Integrating Into a Frontend</a><ul>
-<li><a class="reference internal" href="#game-management">Game Management</a></li>
-<li><a class="reference internal" href="#attaching-your-own-front-end">Attaching your own front end</a></li>
-<li><a class="reference internal" href="#extending-the-provided-desktop-front-end">Extending the provided desktop front end</a><ul>
-<li><a class="reference internal" href="#adding-a-game-type">Adding a game type:</a></li>
-<li><a class="reference internal" href="#adding-a-board">Adding a board:</a></li>
-<li><a class="reference internal" href="#adding-images-for-newly-created-pieces">Adding images for newly created pieces:</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#extending-the-console-frontend">Extending the Console Frontend</a><ul>
-<li><a class="reference internal" href="#id1">Adding a game type:</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#step-1-add-images-for-new-pieces">Step 1: Add images for new pieces</a></li>
+<li><a class="reference internal" href="#step-2-map-these-images-to-textures">Step 2: Map these images to textures</a></li>
+<li><a class="reference internal" href="#step-3-map-textures-to-pieces">Step 3: Map textures to pieces</a></li>
+<li><a class="reference internal" href="#step-4-add-the-button-for-the-variant-in-the-menu-screen">Step 4: Add the button for the variant in the menu screen</a></li>
+<li><a class="reference internal" href="#yay">yay</a></li>
 </ul>
 </li>
 </ul>

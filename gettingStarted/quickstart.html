@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quick Start &mdash; Coding Chess Variants Docs</title>
+  <title>Quickstart &mdash; Coding Chess Variants Docs</title>
   
 
   
@@ -29,8 +29,8 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Supported Variants" href="supportedVariants.html" />
-    <link rel="prev" title="Installation" href="installation.html" /> 
+    <link rel="next" title="Tutorial Introduction" href="../tutorials/tutorialIntroduction.html" />
+    <link rel="prev" title="Supported Variants" href="supportedVariants.html" /> 
 
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167094275-1"></script>
@@ -128,37 +128,33 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Coding Chess Variants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">User Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developerSetup.html">Developer Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supportedVariants.html">Supported Variants</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quickstart</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingBoards.html">Creating Boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingNewPieces.html">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/finaliseGame.html">Completing the Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Engine API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/boards.html">Boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/coordinates.html">Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameMoves.html">Game Moves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/moves.html">Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/moveGenerators.html">Move Generators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/pieces.html">Pieces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../demo/api.html">API documentation and generated content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/demo.html">Paragraph Level Markup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/lists_tables.html">Lists &amp; Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html">Structural Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/api.html">API documentation</a></li>
 </ul>
 
             
@@ -199,7 +195,7 @@
       </li>
 
         
-      <li>Quick Start</li>
+      <li>Quickstart</li>
     
     
       <li class="catalyst-breadcrumbs-aside">
@@ -229,8 +225,80 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="catalyst-article" class="catalyst-article">
               
-  <div class="section" id="quick-start">
-<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="quickstart">
+<h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
+<p>Here we will demonstrate the steps for creating chess variants. Please refer to the specific engine API pages for more specific details.</p>
+<p>In these steps, please refer to the specific tutorial pages for more details.</p>
+<div class="section" id="step-1-create-the-initial-setup-for-a-new-chess-variant">
+<h2>Step 1. Create the initial setup for a new chess variant.<a class="headerlink" href="#step-1-create-the-initial-setup-for-a-new-chess-variant" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Create a new board, or use an already implemented board.</p></li>
+<li><p>Create new pieces, and moves, or use already implemented pieces.</p></li>
+</ol>
+<ol class="loweralpha simple" start="4">
+<li><p>Create new win conditions, or use already implemented win conditions.</p></li>
+<li><p>Create new special rules (such as castling, or ), or use rules that have already been implemented.</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="step-2-add-a-new-game-type">
+<h2>Step 2: Add a new Game type<a class="headerlink" href="#step-2-add-a-new-game-type" title="Permalink to this headline">¶</a></h2>
+<p>In GameTypes, add your new chess variant. This should take in a list of rules and a list of win conditions.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>You variant can implement a more generic AbstractChess.</p></li>
+<li><p>Or it can implement a more specific chess variant from StandardChess. You can use this if you are using a 2D board, has standard castling rules, en passant, has promotable pieces, and standard win conditions.</p></li>
+</ol>
+</div></blockquote>
+<div class="section" id="implement-the-initgame-method">
+<h3>Implement the initGame() method.<a class="headerlink" href="#implement-the-initgame-method" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>The initGame method should initialise the board.</dt><dd><ol class="loweralpha simple">
+<li><p>If your game implements StandardChess, you can use FEN notation to set up the game in the class declaration, like so:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">sampleChess</span><span class="p">()</span> <span class="p">:</span> <span class="n">StandardChess</span><span class="p">(</span><span class="n">FenUtility</span><span class="p">(</span><span class="s">&quot;rqkr/pppp/PPPP/RQKR w -&quot;</span><span class="p">,</span> <span class="n">whiteStartingRow</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">whitePromotionRow</span> <span class="p">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">blackStartingRow</span> <span class="p">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">blackPromotionRow</span> <span class="p">=</span> <span class="m">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>And the initGame() method should look like this:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">initGame</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+    <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+    <span class="n">fen</span><span class="p">.</span><span class="n">initBoardWithFEN</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">player1</span><span class="p">,</span> <span class="n">player2</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="loweralpha simple" start="2">
+<li><p>If your game implements AbstractChess, you must manually add each piece to the board by it’s position, like so:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">initGame</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
+    <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="m">9</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">GrandWhitePawn</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">7</span><span class="p">),</span> <span class="n">GrandBlackPawn</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+    <span class="p">}</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+
+    <span class="p">...</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="step-3-add-the-frontend">
+<h2>Step 3: Add the frontend<a class="headerlink" href="#step-3-add-the-frontend" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Desktop: Integrate your own frontend or extend the existing front end to accomadate your new variant.</p></li>
+<li><p>Console: Eextend the console front end to play your variant in the console.</p></li>
+</ul>
+</div>
 </div>
 
 
@@ -241,10 +309,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="supportedVariants.html" class="btn btn-neutral float-right" title="Supported Variants" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="../tutorials/tutorialIntroduction.html" class="btn btn-neutral float-right" title="Tutorial Introduction" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="supportedVariants.html" class="btn btn-neutral" title="Supported Variants" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -272,7 +340,15 @@
           <div class="catalyst-right-menu" id="catalyst-right-menu">
             <div class="catalyst-side-scroll" id="catalyst-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Quick Start</a></li>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#step-1-create-the-initial-setup-for-a-new-chess-variant">Step 1. Create the initial setup for a new chess variant.</a></li>
+<li><a class="reference internal" href="#step-2-add-a-new-game-type">Step 2: Add a new Game type</a><ul>
+<li><a class="reference internal" href="#implement-the-initgame-method">Implement the initGame() method.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#step-3-add-the-frontend">Step 3: Add the frontend</a></li>
+</ul>
+</li>
 </ul>
 
             </div>

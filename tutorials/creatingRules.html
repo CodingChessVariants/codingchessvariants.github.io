@@ -29,8 +29,8 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating Win Conditions" href="creatingWinConditions.html" />
-    <link rel="prev" title="Creating New Pieces" href="creatingNewPieces.html" /> 
+    <link rel="next" title="Creating the new Win Condition" href="creatingWinConditions.html" />
+    <link rel="prev" title="Set up Board" href="creatingBoards.html" /> 
 
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167094275-1"></script>
@@ -128,37 +128,33 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Coding Chess Variants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">User Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/developerSetup.html">Developer Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingStarted/supportedVariants.html">Supported Variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quickstart</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Creating Boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingNewPieces.html">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finaliseGame.html">Completing the Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Engine API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/boards.html">Boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/coordinates.html">Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameMoves.html">Game Moves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/moves.html">Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/moveGenerators.html">Move Generators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/pieces.html">Pieces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../demo/api.html">API documentation and generated content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/demo.html">Paragraph Level Markup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/lists_tables.html">Lists &amp; Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html">Structural Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/api.html">API documentation</a></li>
 </ul>
 
             
@@ -232,24 +228,67 @@
   <div class="section" id="creating-special-rules">
 <h1>Creating Special Rules<a class="headerlink" href="#creating-special-rules" title="Permalink to this headline">¶</a></h1>
 <p>Special rules are ‘special’ because they can only occur under certain conditions. For example, Castling which can only occur if the king and rook have not moved from their initial positions.</p>
+<p>In our variant, the unique special rule is that a player cannot move the same piece twice in a row. These rules are applied when we fetch the moves a player can make to either filter the moves, or add furthr special moves.
+In this case, we are restricting the moves a player can make by removing the moves which move the same piece the player moved previously.</p>
 <div class="section" id="step-1-implement-the-specialrules-interface">
 <h2>Step 1: Implement the SpecialRules interface<a class="headerlink" href="#step-1-implement-the-specialrules-interface" title="Permalink to this headline">¶</a></h2>
-<p>Implement getPossibleMoves() which should modify the given moves by either adding moves which satisfy the special condition, or modifying the moves to make sure they all satisfy a condition. For example, in Antichess if a player can take a piece they must take the piece.
-This behaviour can be encapsualted like so:</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">GameMove2D</span><span class="p">&gt;)</span> <span class="p">{</span>
-       <span class="k">val</span> <span class="py">pred</span> <span class="p">=</span> <span class="p">{</span> <span class="n">it</span><span class="p">:</span> <span class="n">GameMove2D</span> <span class="p">-&gt;</span> <span class="n">it</span> <span class="k">is</span> <span class="n">BasicGameMove</span> <span class="p">&amp;&amp;</span> <span class="n">it</span><span class="p">.</span><span class="n">pieceCaptured</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">}</span>
-       <span class="k">if</span> <span class="p">(</span><span class="n">moves</span><span class="p">.</span><span class="n">any</span><span class="p">(</span><span class="n">pred</span><span class="p">))</span> <span class="p">{</span>
-           <span class="n">moves</span><span class="p">.</span><span class="n">retainAll</span><span class="p">(</span><span class="n">pred</span><span class="p">)</span>
-       <span class="p">}</span>
-   <span class="p">}</span>
+<ol class="arabic simple">
+<li><p>Create a file called “NoRepeatedMoveFromSamePieceRule.kt” in the tutorials package you have created.</p></li>
+<li><p>Make this class implement the SpecialRules2D&lt;AbstractChess&gt; interface.</p></li>
+</ol>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
+
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
+<span class="k">import</span> <span class="nn">moves.Move2D</span>
+<span class="k">import</span> <span class="nn">players.Player</span>
+<span class="k">import</span> <span class="nn">rules.SpecialRules2D</span>
+
+<span class="k">class</span> <span class="nc">NoRepeatedMoveFromSamePieceRule</span><span class="p">()</span> <span class="p">:</span> <span class="n">SpecialRules2D</span><span class="p">&lt;</span><span class="n">AbstractChess</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
+        <span class="n">TODO</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>This will modify the move list if it contains any capture moves to contain only capture moves.</p>
 </div>
-<div class="section" id="step-2-add-the-list-of-special-rules-to-your-game-type">
-<h2>Step 2: Add the list of special rules to your game type<a class="headerlink" href="#step-2-add-the-list-of-special-rules-to-your-game-type" title="Permalink to this headline">¶</a></h2>
-<p>For example, in Antichess they would be added as the first parameter for AbstractChess.</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">AntiChess</span> <span class="p">:</span> <span class="n">AbstractChess</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">ForcedCaptureRule</span><span class="p">()),</span> <span class="n">listOf</span><span class="p">(</span><span class="n">AntiChessWinConditions</span><span class="p">()))</span>
+<div class="section" id="step-2-implement-the-getpossiblemoves-method">
+<h2>Step 2: Implement the getPossibleMoves() method<a class="headerlink" href="#step-2-implement-the-getpossiblemoves-method" title="Permalink to this headline">¶</a></h2>
+<p>This function should modify the given moves list by removing all the moves that contain the piece that the player moved previously.
+We can get the move the player previously made like so:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">val</span> <span class="py">prevMove</span> <span class="p">=</span> <span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">[</span><span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">.</span><span class="n">size</span> <span class="p">-</span> <span class="m">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This means we can easily remove the moves where the same piece is moved like so:</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;=</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="k">val</span> <span class="py">prevMove</span> <span class="p">=</span> <span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">[</span><span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">.</span><span class="n">size</span> <span class="p">-</span> <span class="m">2</span><span class="p">]</span>
+    <span class="n">moves</span><span class="p">.</span><span class="n">removeAll</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">displayPieceMoved</span> <span class="p">===</span> <span class="n">prevMove</span><span class="p">.</span><span class="n">displayPieceMoved</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-3-overall">
+<h2>Step 3: Overall<a class="headerlink" href="#step-3-overall" title="Permalink to this headline">¶</a></h2>
+<p>The NoRepeatedMoveFromSamePieceRule class should now look like this.</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
+
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
+<span class="k">import</span> <span class="nn">moves.Move2D</span>
+<span class="k">import</span> <span class="nn">players.Player</span>
+<span class="k">import</span> <span class="nn">rules.SpecialRules2D</span>
+
+<span class="k">class</span> <span class="nc">NoRepeatedMoveFromSamePieceRule</span><span class="p">()</span> <span class="p">:</span> <span class="n">SpecialRules2D</span><span class="p">&lt;</span><span class="n">AbstractChess</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+
+        <span class="k">val</span> <span class="py">prevMove</span> <span class="p">=</span> <span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">[</span><span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">.</span><span class="n">size</span> <span class="p">-</span> <span class="m">2</span><span class="p">]</span>
+        <span class="n">moves</span><span class="p">.</span><span class="n">removeAll</span> <span class="p">{</span> <span class="n">it</span><span class="p">.</span><span class="n">displayPieceMoved</span> <span class="p">===</span> <span class="n">prevMove</span><span class="p">.</span><span class="n">displayPieceMoved</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -263,10 +302,10 @@ This behaviour can be encapsualted like so:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="creatingWinConditions.html" class="btn btn-neutral float-right" title="Creating Win Conditions" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="creatingWinConditions.html" class="btn btn-neutral float-right" title="Creating the new Win Condition" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="creatingNewPieces.html" class="btn btn-neutral" title="Creating New Pieces" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="creatingBoards.html" class="btn btn-neutral" title="Set up Board" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -296,7 +335,8 @@ This behaviour can be encapsualted like so:</p>
               <ul>
 <li><a class="reference internal" href="#">Creating Special Rules</a><ul>
 <li><a class="reference internal" href="#step-1-implement-the-specialrules-interface">Step 1: Implement the SpecialRules interface</a></li>
-<li><a class="reference internal" href="#step-2-add-the-list-of-special-rules-to-your-game-type">Step 2: Add the list of special rules to your game type</a></li>
+<li><a class="reference internal" href="#step-2-implement-the-getpossiblemoves-method">Step 2: Implement the getPossibleMoves() method</a></li>
+<li><a class="reference internal" href="#step-3-overall">Step 3: Overall</a></li>
 </ul>
 </li>
 </ul>

@@ -29,8 +29,8 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating Special Rules" href="creatingRules.html" />
-    <link rel="prev" title="Integrating Into a Frontend" href="integrateIntoExampleFrontend.html" /> 
+    <link rel="next" title="Initialise the game variant" href="initGame.html" />
+    <link rel="prev" title="Tutorial Introduction" href="tutorialIntroduction.html" /> 
 
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167094275-1"></script>
@@ -128,37 +128,33 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Coding Chess Variants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/installation.html">User Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/developerSetup.html">Developer Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gettingStarted/supportedVariants.html">Supported Variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingStarted/quickstart.html">Quickstart</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Creating Boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="finaliseGame.html">Completing the Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Engine API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/boards.html">Boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/coordinates.html">Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameMoves.html">Game Moves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/moves.html">Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/moveGenerators.html">Move Generators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/pieces.html">Pieces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../demo/api.html">API documentation and generated content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/demo.html">Paragraph Level Markup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/lists_tables.html">Lists &amp; Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html">Structural Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/api.html">API documentation</a></li>
 </ul>
 
             
@@ -231,68 +227,50 @@
               
   <div class="section" id="creating-new-pieces">
 <h1>Creating New Pieces<a class="headerlink" href="#creating-new-pieces" title="Permalink to this headline">¶</a></h1>
-<p>Creating new pieces requires you to also provide the moves it can make, excluding special rules which are evaluated later.</p>
-<p>Pieces that have already been implemented are those in standard chess, Capablanca Chess, Antichess, Grand chess, Xiangqi, and Janggi.</p>
-<div class="section" id="step-1-implement-the-piece-interface">
-<h2>Step 1: Implement the Piece interface<a class="headerlink" href="#step-1-implement-the-piece-interface" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>If your game is 2D and uses a rectangular board, then implement the Piece2D interface</p></li>
-<li><p>Otherwise, create a new interface that implements Piece with the appropriate board, coordinates, and moves.</p></li>
-<li><p>If your piece is a Pawn or a King, then it should further implement the Pawn or King marker interfaces.</p></li>
-</ol>
-</div></blockquote>
-</div>
-<div class="section" id="step-2-implement-the-methods">
-<h2>Step 2: Implement the methods<a class="headerlink" href="#step-2-implement-the-methods" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="option-1-if-your-piece-is-a-standard-pawn">
-<h3>Option 1: (If your piece is a standard pawn)<a class="headerlink" href="#option-1-if-your-piece-is-a-standard-pawn" title="Permalink to this headline">¶</a></h3>
+<p>You can create new pieces easily by using move generators which give pieces their core behaviour. Special rules are applied applied to allow for special rules such as castling.</p>
+<p>The engine has already implemented pieces which are used in Standard Chess, Capablanca Chess, Antichess, Grand chess, Xiangqi, and Janggi. These can be easily reused in your own variants .</p>
+<p>For our chess variant, we will use the pre-implemented rook, bishop and king from Standard Chess. We will also implement our own Berlin pawn and elephant</p>
+<div class="section" id="creating-the-berlin-pawn">
+<h2>Creating The Berlin Pawn<a class="headerlink" href="#creating-the-berlin-pawn" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Your piece is a standard pawn if:</dt><dd><ul class="simple">
-<li><p>The game is 2D</p></li>
-<li><p>It can double move on it’s first turn</p></li>
-<li><p>It pawn can usually only step once northwards-ly</p></li>
-<li><p>It can promote</p></li>
-<li><p>Can only capture north-diagonally.</p></li>
+<dt>The Berlin pawn is a piece which is the converse of a pawn in standard chess with a few key differences.</dt><dd><ul class="simple">
+<li><p>They can move one square diagonally without capturing.</p></li>
+<li><p>They can capture by moving one square straight forward.</p></li>
+<li><p>On their first move, they can move two squares diagonally forwards.</p></li>
 </ul>
 </dd>
 </dl>
-<p>In this case, you can directly implement the WhitePawn class, and set custom settings for the starting row, promotion region, and the list of pieces it can promote to.</p>
-</div>
-<div class="section" id="option-2-otherwise">
-<h3>Option 2: Otherwise<a class="headerlink" href="#option-2-otherwise" title="Permalink to this headline">¶</a></h3>
-<p>You must a give a list of moves the piece can do in moveTypes. Please look at the Engine API pages for Moves for further details.
-For example, the standard Rook gives this as their moveTypes:</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">val</span> <span class="py">moveTypes</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;</span>
-      <span class="k">get</span><span class="p">()</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="n">Move2D</span><span class="p">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">H</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span> <span class="n">V</span> <span class="p">=</span> <span class="k">true</span><span class="p">,</span> <span class="n">A</span> <span class="p">=</span> <span class="k">false</span><span class="p">,</span> <span class="n">D</span> <span class="p">=</span> <span class="k">false</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>This describes the rook’s movements as a slider that can only move horizontally or vertically.</p>
-<p>For a more complicated example, WhitePawn gives this as their moveTypes:</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">val</span> <span class="py">moveTypes</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span>
-        <span class="n">Move2D</span><span class="p">.</span><span class="n">Restricted</span><span class="p">(</span><span class="n">Move2D</span><span class="p">.</span><span class="n">Stepper</span><span class="p">(</span><span class="n">Direction</span><span class="p">.</span><span class="n">NORTH</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">RowRegion</span><span class="p">(</span><span class="n">startingRow</span><span class="p">)),</span>
-        <span class="n">Move2D</span><span class="p">.</span><span class="n">AddPromotion</span><span class="p">(</span>
-            <span class="n">listOf</span><span class="p">(</span>
-                <span class="n">Move2D</span><span class="p">.</span><span class="n">Stepper</span><span class="p">(</span><span class="n">Direction</span><span class="p">.</span><span class="n">NORTH</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span>
-                <span class="n">Move2D</span><span class="p">.</span><span class="n">CaptureOnly</span><span class="p">(</span><span class="n">Move2D</span><span class="p">.</span><span class="n">Stepper</span><span class="p">(</span><span class="n">Direction</span><span class="p">.</span><span class="n">NORTH_EAST</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="k">true</span><span class="p">)),</span>
-                <span class="n">Move2D</span><span class="p">.</span><span class="n">CaptureOnly</span><span class="p">(</span><span class="n">Move2D</span><span class="p">.</span><span class="n">Stepper</span><span class="p">(</span><span class="n">Direction</span><span class="p">.</span><span class="n">NORTH_WEST</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="k">true</span><span class="p">)),</span>
-            <span class="p">),</span>
-            <span class="n">promotionRegion</span><span class="p">,</span>
-            <span class="n">pawnPromotions</span><span class="p">,</span>
-            <span class="k">true</span>
-        <span class="p">),</span>
-</pre></div>
-</div>
-<p>The first move represents that a pawn can move 2 steps north when it starts in it’s starting row.
-The next moves are wrapped in AddPromotion, meaning these moves can result in promotion if they move into the PromotionRegion.
-These moves describe pawn moves for stepping north once, and for capturing in both north diagonals.</p>
-<p>The special rule, En Passant, is given later as a special rule.</p>
-<p>You should also provide a symbol representation for your piece. These do not need to be unique.</p>
-</div>
-</div>
-<div class="section" id="step-3-special-rules">
-<h2>Step 3: Special Rules<a class="headerlink" href="#step-3-special-rules" title="Permalink to this headline">¶</a></h2>
-<p>Special rules are ‘special’ because they can only occur under certain conditions. If your piece has a special rule, please look at the tutorial section for creating special rules.</p>
+<p>Create a new <strong>tutorial</strong> package in the engine project (engine/src/main/kotlin). We will create two classes, one to represent the Berlin white pawn and one to represent the Berlin black pawn.</p>
+<p>Create a file called BerlinWhitePawn.kt:</p>
+<iframe
+  src="https://carbon.now.sh/embed/9CBhCM1xOMCsazwXGUZf"
+  style="width: 826px; height: 449px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe><p>Each piece is defined by a list of move generators which define the different moves that the pieces can usually make.</p>
+<dl class="simple">
+<dt>In the case of the Berlin white pawn:</dt><dd><ul class="simple">
+<li><p>The restricted stepper move denotes that the piece can move 2 steps in the north-east or north-west direction only when it is on the starting row (has not moved yet).</p></li>
+<li><p>The promotion wrapper denotes that the moves within can result in promotion to a rook, alfil, bishop or queen when the pawn reaches the 6th row.</p></li>
+<li><p>The stepper move in the add promotion wrapper denotes that the piece can move 1 step in the north-east or north-west direction.</p></li>
+<li><p>The capture-only stepper in the add promotion move denotes that the piece can move 1 step north only when it is capturing a piece.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Similarly for the black pawn, create a file called BerlinBlackPawn.kt:</p>
+<iframe
+  src="https://carbon.now.sh/embed/LPlzCQchgD3SmPCdWU1u"
+  style="width: 826px; height: 449px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe></div>
+<div class="section" id="creating-the-alfil">
+<h2>Creating The Alfil<a class="headerlink" href="#creating-the-alfil" title="Permalink to this headline">¶</a></h2>
+<p>The Alfil is a piece that can jump two squares diagonally and can leap over pieces.</p>
+<p>Create a file called Alfil.kt:</p>
+<iframe
+  src="https://carbon.now.sh/embed/9QJjNMAmeA3ank2ZfSeG"
+  style="width: 501px; height: 269px; border:0; transform: scale(1); overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin">
+</iframe><p>The Alfil is a</p>
 </div>
 </div>
 
@@ -304,10 +282,10 @@ These moves describe pawn moves for stepping north once, and for capturing in bo
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="creatingRules.html" class="btn btn-neutral float-right" title="Creating Special Rules" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="initGame.html" class="btn btn-neutral float-right" title="Initialise the game variant" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="integrateIntoExampleFrontend.html" class="btn btn-neutral" title="Integrating Into a Frontend" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="tutorialIntroduction.html" class="btn btn-neutral" title="Tutorial Introduction" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -336,13 +314,8 @@ These moves describe pawn moves for stepping north once, and for capturing in bo
             <div class="catalyst-side-scroll" id="catalyst-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">Creating New Pieces</a><ul>
-<li><a class="reference internal" href="#step-1-implement-the-piece-interface">Step 1: Implement the Piece interface</a></li>
-<li><a class="reference internal" href="#step-2-implement-the-methods">Step 2: Implement the methods</a><ul>
-<li><a class="reference internal" href="#option-1-if-your-piece-is-a-standard-pawn">Option 1: (If your piece is a standard pawn)</a></li>
-<li><a class="reference internal" href="#option-2-otherwise">Option 2: Otherwise</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#step-3-special-rules">Step 3: Special Rules</a></li>
+<li><a class="reference internal" href="#creating-the-berlin-pawn">Creating The Berlin Pawn</a></li>
+<li><a class="reference internal" href="#creating-the-alfil">Creating The Alfil</a></li>
 </ul>
 </li>
 </ul>

@@ -29,8 +29,8 @@
   <!-- <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Moves" href="moves.html" />
-    <link rel="prev" title="Game Moves" href="gameMoves.html" /> 
+    <link rel="next" title="Move Generators" href="moveGenerators.html" />
+    <link rel="prev" title="Moves" href="moves.html" /> 
 
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167094275-1"></script>
@@ -128,37 +128,33 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../index.html">Coding Chess Variants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gettingStarted/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../gettingStarted/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingStarted/installation.html">User Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingStarted/developerSetup.html">Developer Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../gettingStarted/supportedVariants.html">Supported Variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gettingStarted/quickstart.html">Quickstart</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/creatingBoards.html">Creating Boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/creatingNewPieces.html">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorials/creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorials/creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/finaliseGame.html">Completing the Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Engine API</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="boards.html">Boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="coordinates.html">Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gameMoves.html">Game Moves</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Game Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="moves.html">Moves</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moveGenerators.html">Move Generators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pieces.html">Pieces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/api.html">API documentation and generated content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/demo.html">Paragraph Level Markup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/lists_tables.html">Lists &amp; Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/structure.html">Structural Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
 </ul>
 
             
@@ -235,7 +231,7 @@
 <h2>GameType<a class="headerlink" href="#gametype" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt>
-<code class="sig-name descname">interface GameType&lt;B : Board&lt;B, M, GM, P, C&gt;, M : Move&lt;B, M, GM, P, C&gt;, GM: GameMove&lt;B, M, GM, P, C&gt;, P: Piece&lt;B, M, GM, P, C&gt;, C: Coordinate&gt;</code></dt>
+<code class="sig-name descname">interface GameType&lt;B : Board&lt;B, M, GM, P, C&gt;, M : Move&lt;B, M, GM, P, C&gt;, GM: Move&lt;B, M, GM, P, C&gt;, P: Piece&lt;B, M, GM, P, C&gt;, C: Coordinate&gt;</code></dt>
 <dd></dd></dl>
 
 <p>Represents a game variant (e.g. Standard Chess, Capablanca Chess, Xiangqi).
@@ -346,7 +342,15 @@ Returns null if the game is not over.</p>
 </div>
 <div class="section" id="win-conditions">
 <h2>Win Conditions<a class="headerlink" href="#win-conditions" title="Permalink to this headline">¶</a></h2>
-<p>Represents conditions for stalemates or checkmates.</p>
+<p>Represents conditions for stalemates or checkmates. These are evaluated every turn to see if the game should end. The win conditions should be specified in each game type.
+The standard win conditions have already been implemented. These are:</p>
+<ul class="simple">
+<li><p>Checkmate,</p></li>
+<li><p>Stalemate by no legal moves</p></li>
+<li><p>Stalemate by three-fold-repetition</p></li>
+<li><p>Stalemate by the 50-move rules</p></li>
+<li><p>Stalemate by insufficient material.</p></li>
+</ul>
 <div class="section" id="id2">
 <h3>Methods<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
@@ -367,10 +371,10 @@ Returns null if the game is not over.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="moves.html" class="btn btn-neutral float-right" title="Moves" accesskey="n" rel="next">Next <img src="../../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="moveGenerators.html" class="btn btn-neutral float-right" title="Move Generators" accesskey="n" rel="next">Next <img src="../../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="gameMoves.html" class="btn btn-neutral" title="Game Moves" accesskey="p" rel="prev"><img src="../../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="moves.html" class="btn btn-neutral" title="Moves" accesskey="p" rel="prev"><img src="../../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   

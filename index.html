@@ -29,7 +29,7 @@
   <!-- <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="gettingStarted/installation.html" /> 
+    <link rel="next" title="User Installation" href="gettingStarted/installation.html" /> 
 
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167094275-1"></script>
@@ -127,37 +127,33 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Coding Chess Variants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingStarted/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingStarted/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted/installation.html">User Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted/developerSetup.html">Developer Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gettingStarted/supportedVariants.html">Supported Variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted/quickstart.html">Quickstart</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/creatingBoards.html">Creating Boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/creatingNewPieces.html">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/finaliseGame.html">Completing the Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Engine API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api/engine/boards.html">Boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/engine/coordinates.html">Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/engine/gameMoves.html">Game Moves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/engine/gameTypes.html">Game Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/engine/moves.html">Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/engine/gameTypes.html">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/engine/moveGenerators.html">Move Generators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/engine/pieces.html">Pieces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/engine/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/engine/utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="demo/api.html">API documentation and generated content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo/demo.html">Paragraph Level Markup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo/lists_tables.html">Lists &amp; Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo/structure.html">Structural Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/engine/api.html">API documentation</a></li>
 </ul>
 
             
@@ -238,20 +234,41 @@ It can be easily integrated with different chess frontends including those which
 </div>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<p>The library was designed for extendability and adaptablity.
+It is possible to create a large range of interesting and unique variants using the library.</p>
+<p>Features of our library include:</p>
 <ul class="simple">
-<li><p>Feature 1 - xd</p></li>
-<li><p>Feature 2 - xd</p></li>
-<li><p>Feature 3 - xd</p></li>
+<li><p>Adaptable board: The board used in the variant is not limited to a rectangular board, but can be in higher dimensions, or a non-rectangular board such as a hexagon.</p></li>
+<li><p>Simple Piece Creation: The library provides a simple abstraction for adding new fairy pieces, that have unique movement rules.</p></li>
+<li><p>Simple, yet powerful Move Generators: Complex and simple moves are easy to implement using the clear abstraction the library gives.</p></li>
 </ul>
+<p>In addition, the library has support for FEN notation, and an example desktop application and console application.</p>
+<p>As part of the core codebase, KChess provides 12 different variants by default which are readily playable including both Western and East Asian chess variants, as well as 3D and Hexagonal chess games.
+Their components are all completely reusable, so all the implemented pieces and rules from these variants can be used in new variants.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Coding Chess Variants</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingStarted/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gettingStarted/quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted/installation.html">User Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingStarted/installation.html#desktop-application">Desktop Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingStarted/installation.html#console-application">Console Application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted/developerSetup.html">Developer Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingStarted/developerSetup.html#using-the-engine-with-our-frontend">Using The Engine With Our Frontend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingStarted/developerSetup.html#using-the-engine-for-your-own-projects">Using The Engine For Your Own Projects</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="gettingStarted/supportedVariants.html">Supported Variants</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="gettingStarted/supportedVariants.html#implemented-variants">Implemented Variants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gettingStarted/supportedVariants.html#potential-variants">Potential Variants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingStarted/supportedVariants.html#images-of-variants-implemented">Images of variants implemented</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gettingStarted/quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gettingStarted/quickstart.html#step-1-create-the-initial-setup-for-a-new-chess-variant">Step 1. Create the initial setup for a new chess variant.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingStarted/quickstart.html#step-2-add-a-new-game-type">Step 2: Add a new Game type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingStarted/quickstart.html#step-3-add-the-frontend">Step 3: Add the frontend</a></li>
 </ul>
 </li>
 </ul>
@@ -259,32 +276,45 @@ It can be easily integrated with different chess frontends including those which
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorial.html">Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial.html#step-1-create-the-initial-setup-for-a-new-chess-variant">Step 1. Create the initial setup for a new chess variant.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial.html#step-2-add-a-new-game-type">Step 2: Add a new Game type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/tutorial.html#step-3-add-the-frontend">Step 3: Add the frontend</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/creatingBoards.html">Creating Boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#game-management">Game Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#attaching-your-own-front-end">Attaching your own front end</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#extending-the-provided-desktop-front-end">Extending the provided desktop front end</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#extending-the-console-frontend">Extending the Console Frontend</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/creatingNewPieces.html">Creating New Pieces</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingNewPieces.html#step-1-implement-the-piece-interface">Step 1: Implement the Piece interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingNewPieces.html#step-2-implement-the-methods">Step 2: Implement the methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingNewPieces.html#step-3-special-rules">Step 3: Special Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingNewPieces.html#creating-the-berlin-pawn">Creating The Berlin Pawn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingNewPieces.html#creating-the-alfil">Creating The Alfil</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/creatingBoards.html">Set up Board</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingBoards.html#step-1-creating-a-board">Step 1: Creating a board</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingBoards.html#step-2-implementing-initboard">Step 2: Implementing initBoard()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingBoards.html#step-3-overall">Step 3: Overall</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/creatingRules.html">Creating Special Rules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/creatingRules.html#step-1-implement-the-specialrules-interface">Step 1: Implement the SpecialRules interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingRules.html#step-2-add-the-list-of-special-rules-to-your-game-type">Step 2: Add the list of special rules to your game type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingRules.html#step-2-implement-the-getpossiblemoves-method">Step 2: Implement the getPossibleMoves() method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingRules.html#step-3-overall">Step 3: Overall</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tutorials/creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/creatingWinConditions.html">Creating the new Win Condition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingWinConditions.html#step-1-create-a-new-file">Step 1: Create a new file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingWinConditions.html#step-3-implement-the-evaluate-method">Step 3: Implement the evaluate method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/creatingWinConditions.html#step-4-overall-class">Step 4: Overall class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/finaliseGame.html">Completing the Game</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/finaliseGame.html#step-1-add-special-rules">Step 1. Add Special Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/finaliseGame.html#step-2-add-win-conditions">Step 2. Add Win Conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/finaliseGame.html#step-3-overall">Step 3. Overall</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#step-1-add-images-for-new-pieces">Step 1: Add images for new pieces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#step-2-map-these-images-to-textures">Step 2: Map these images to textures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#step-3-map-textures-to-pieces">Step 3: Map textures to pieces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#step-4-add-the-button-for-the-variant-in-the-menu-screen">Step 4: Add the button for the variant in the menu screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/integrateIntoExampleFrontend.html#yay">yay</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -300,9 +330,9 @@ It can be easily integrated with different chess frontends including those which
 <li class="toctree-l2"><a class="reference internal" href="api/engine/coordinates.html#coordinate2d">Coordinate2D</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api/engine/gameMoves.html">Game Moves</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/engine/gameMoves.html#gamemove">GameMove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/engine/gameMoves.html#gamemove2d">GameMove2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/engine/moves.html">Moves</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/engine/moves.html#move">Move</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/engine/moves.html#gamemove2d">GameMove2D</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/engine/gameTypes.html">Game Types</a><ul>
@@ -311,9 +341,9 @@ It can be easily integrated with different chess frontends including those which
 <li class="toctree-l2"><a class="reference internal" href="api/engine/gameTypes.html#win-conditions">Win Conditions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api/engine/moves.html">Moves</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="api/engine/moves.html#move">Move</a></li>
-<li class="toctree-l2"><a class="reference internal" href="api/engine/moves.html#region">Region</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/engine/moveGenerators.html">Move Generators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/engine/moveGenerators.html#movegenerator">MoveGenerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/engine/moveGenerators.html#region">Region</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api/engine/pieces.html">Pieces</a><ul>
@@ -326,51 +356,8 @@ It can be easily integrated with different chess frontends including those which
 <li class="toctree-l2"><a class="reference internal" href="api/engine/utils.html#chessnotationinput">ChessNotationInput</a></li>
 </ul>
 </li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="demo/api.html">API documentation and generated content</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="demo/api.html#test-py-module"><code class="xref py py-mod docutils literal notranslate"><span class="pre">test_py_module</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/api.html#c-api">C++ API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/api.html#javascript-api">JavaScript API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/api.html#generated-index">Generated Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/api.html#optional-parameter-args">Optional parameter args</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/api.html#data">Data</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo/demo.html">Paragraph Level Markup</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#inline-markup">Inline Markup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#math">Math</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#meta">Meta</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#blocks">Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#sidebar">Sidebar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#references">References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#directives">Directives</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/demo.html#download-links">Download Links</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo/lists_tables.html">Lists &amp; Tables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#enumerated-lists">Enumerated Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#definition-lists">Definition Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#option-lists">Option Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#field-list">Field list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#bullet-lists">Bullet Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#hlists">Hlists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#numbered-list">Numbered List</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#grid-tables">Grid Tables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="demo/lists_tables.html#list-tables">List Tables</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo/structure.html">Structural Elements</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="demo/structure.html#document-section">Document Section</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="demo/structure.html#structural-elements-2">Structural Elements 2</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="demo/structure.html#id1">Document Section</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/engine/api.html">API documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/engine/api.html#api-library-functions-documentation">API library functions documentation</a></li>
 </ul>
 </li>
 </ul>
@@ -386,7 +373,7 @@ It can be easily integrated with different chess frontends including those which
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gettingStarted/installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="gettingStarted/installation.html" class="btn btn-neutral float-right" title="User Installation" accesskey="n" rel="next">Next <img src="_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
     </div>

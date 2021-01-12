@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; Coding Chess Variants Docs</title>
+  <title>User Installation &mdash; Coding Chess Variants Docs</title>
   
 
   
@@ -29,7 +29,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Quick Start" href="quickstart.html" />
+    <link rel="next" title="Developer Setup" href="developerSetup.html" />
     <link rel="prev" title="Coding Chess Variants" href="../index.html" /> 
 
   
@@ -128,37 +128,33 @@
               <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Coding Chess Variants</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developerSetup.html">Developer Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supportedVariants.html">Supported Variants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorial.html">Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingBoards.html">Creating Boards</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/tutorialIntroduction.html">Tutorial Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingNewPieces.html">Creating New Pieces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/initGame.html">Initialise the game variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingWinConditions.html">Creating Win Conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/finaliseGame.html">Completing the Game</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Engine API</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/boards.html">Boards</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/coordinates.html">Coordinates</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameMoves.html">Game Moves</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/moves.html">Moves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/gameTypes.html">Game Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/moveGenerators.html">Move Generators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/pieces.html">Pieces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/engine/utils.html">Utils</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Demo Reference</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../demo/api.html">API documentation and generated content</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/demo.html">Paragraph Level Markup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/lists_tables.html">Lists &amp; Tables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html">Structural Elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../demo/structure.html#structural-elements-2">Structural Elements 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/engine/api.html">API documentation</a></li>
 </ul>
 
             
@@ -199,7 +195,7 @@
       </li>
 
         
-      <li>Installation</li>
+      <li>User Installation</li>
     
     
       <li class="catalyst-breadcrumbs-aside">
@@ -229,8 +225,24 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="catalyst-article" class="catalyst-article">
               
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="user-installation">
+<h1>User Installation<a class="headerlink" href="#user-installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="desktop-application">
+<h2>Desktop Application<a class="headerlink" href="#desktop-application" title="Permalink to this headline">¶</a></h2>
+<p>Prerequisites - JRE 8+ installed</p>
+<p>Download the KChess desktop application jar here and run using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java -jar desktopclient.jar
+</pre></div>
+</div>
+</div>
+<div class="section" id="console-application">
+<h2>Console Application<a class="headerlink" href="#console-application" title="Permalink to this headline">¶</a></h2>
+<p>Prerequisites - JRE 8+ installed</p>
+<p>Download the KChess console application jar here and run using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java -jar consoleclient.jar
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -241,7 +253,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quick Start" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="developerSetup.html" class="btn btn-neutral float-right" title="Developer Setup" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="../index.html" class="btn btn-neutral" title="Coding Chess Variants" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
@@ -272,7 +284,11 @@
           <div class="catalyst-right-menu" id="catalyst-right-menu">
             <div class="catalyst-side-scroll" id="catalyst-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Installation</a></li>
+<li><a class="reference internal" href="#">User Installation</a><ul>
+<li><a class="reference internal" href="#desktop-application">Desktop Application</a></li>
+<li><a class="reference internal" href="#console-application">Console Application</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
