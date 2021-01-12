@@ -23,6 +23,14 @@ List of variants we have currently implmented:
 
 8. Janggi
 
+9. Balbo's game
+
+10. Hexagonal Chess
+
+11. 3D Chess
+
+12. Checkers
+
 Potential Variants
 ====================
 
@@ -42,6 +50,8 @@ Our engine can also support various different chess variants with features inclu
 
 It can also be easily extended to support a vast range of non-chess related board games.
 
+Images of variants implemented
+==================================
 
 .. list-table::
 
@@ -74,5 +84,16 @@ It can also be easily extended to support a vast range of non-chess related boar
     * - .. figure:: /../_static/images/minichess.png
 
          Mini Chess
-        
-      - 
+
+      - .. figure:: /../_static/balbosgame.png
+
+         Balbo's Game
+   
+    * - .. figure:: /../_static/hexchess.png
+
+         Hexagonal Chess
+
+      - .. figure:: /../_static/checkers.png
+
+         Checkers's Game
+

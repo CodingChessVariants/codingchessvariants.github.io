@@ -12,9 +12,21 @@ It can be easily integrated with different chess frontends including those which
 
 Features
 ========================
-- Feature 1 - xd
-- Feature 2 - xd
-- Feature 3 - xd
+The library was designed for extendability and adaptablity.
+It is possible to create a large range of interesting and unique variants using the library.
+
+Features of our library include:
+
+- Adaptable board: The board used in the variant is not limited to a rectangular board, but can be in higher dimensions, or a non-rectangular board such as a hexagon.
+
+- Simple Piece Creation: The library provides a simple abstraction for adding new fairy pieces, that have unique movement rules.
+
+- Simple, yet powerful Move Generators: Complex and simple moves are easy to implement using the clear abstraction the library gives.
+
+In addition, the library has support for FEN notation, and an example desktop application and console application.
+
+As part of the core codebase, KChess provides 12 different variants by default which are readily playable including both Western and East Asian chess variants, as well as 3D and Hexagonal chess games.
+Their components are all completely reusable, so all the implemented pieces and rules from these variants can be used in new variants.
 
 .. toctree::
     :maxdepth: 2
