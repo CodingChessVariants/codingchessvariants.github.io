@@ -1,5 +1,5 @@
 ================================
-Initialising The Game
+Initialise the game variant
 ================================
 
 In the tutorials package you have created, create a file called TutorialChess.kt

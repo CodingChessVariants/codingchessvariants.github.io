@@ -1,5 +1,5 @@
 ***************************
-Setting Up The Board
+Set up Board
 ***************************
 
 Right now, your TutorialChess.kt should look like this:

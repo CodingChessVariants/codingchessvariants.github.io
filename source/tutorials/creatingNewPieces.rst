@@ -60,4 +60,5 @@ Create a file called Alfil.kt:
     sandbox="allow-scripts allow-same-origin">
   </iframe>
 
-The move generator used in this case is a leaper which will allow the Alfil to jump diagonally and leap over pieces.
+
+The Alfil is a 
