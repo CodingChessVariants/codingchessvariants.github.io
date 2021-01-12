@@ -64,17 +64,17 @@ Their components are all completely reusable, so all the implemented pieces and 
     api/engine/players
     api/engine/utils
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Demo
+.. .. toctree::
+..     :maxdepth: 2
+..     :caption: Demo
 
-    demo2/variants
+..     demo2/variants
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Demo Reference
+.. .. toctree::
+..     :maxdepth: 2
+..     :caption: Demo Reference
 
-    demo/api
-    demo/demo
-    demo/lists_tables
-    demo/structure
+..     demo/api
+..     demo/demo
+..     demo/lists_tables
+..     demo/structure
