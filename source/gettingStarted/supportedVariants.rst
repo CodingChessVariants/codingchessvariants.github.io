@@ -97,3 +97,8 @@ Images of variants implemented
 
          Checkers's Game
 
+    * - .. figure:: /../_static/3DChess.png
+
+         3D Chess
+
+      - 
