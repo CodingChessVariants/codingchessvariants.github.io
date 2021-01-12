@@ -63,6 +63,7 @@ Their components are all completely reusable, so all the implemented pieces and 
     api/engine/pieces
     api/engine/players
     api/engine/utils
+    api/engine/api
 
 .. .. toctree::
 ..     :maxdepth: 2
