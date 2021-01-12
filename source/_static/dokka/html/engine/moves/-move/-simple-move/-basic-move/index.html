@@ -1,0 +1,442 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>BasicMove</title>
+    <link href="../../../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../../../";</script>
+    <script type="text/javascript" src="../../../../../scripts/sourceset_dependencies.js" async="async"></script>
+    <link href="../../../../../styles/style.css" rel="Stylesheet">
+    <link href="../../../../../styles/logo-styles.css" rel="Stylesheet">
+    <link href="../../../../../styles/jetbrains-mono.css" rel="Stylesheet">
+    <link href="../../../../../styles/main.css" rel="Stylesheet">
+    <script type="text/javascript" src="../../../../../scripts/clipboard.js" async="async"></script>
+    <script type="text/javascript" src="../../../../../scripts/navigation-loader.js" async="async"></script>
+    <script type="text/javascript" src="../../../../../scripts/platform-content-handler.js" async="async"></script>
+    <script type="text/javascript" src="../../../../../scripts/main.js" async="async"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="leftColumn">
+        <div id="logo"></div>
+        <div id="paneSearch"></div>
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <div id="leftToggler"><span class="icon-toggler"></span></div>
+        <script type="text/javascript" src="../../../../../scripts/pages.js"></script>
+        <script type="text/javascript" src="../../../../../scripts/main.js"></script>
+        <div class="main-content" id="content" pageIds="moves/Move.SimpleMove.BasicMove///PointingToDeclaration//1667983881">
+          <div class="navigation-wrapper" id="navigation-wrapper">
+            <div class="breadcrumbs"><a href="../../../../index.html">engine</a>/<a href="../../../index.html">moves</a>/<a href="../../index.html">Move</a>/<a href="../index.html">SimpleMove</a>/<a href="index.html">BasicMove</a></div>
+            <div class="pull-right d-flex">
+              <div id="searchBar"></div>
+            </div>
+          </div>
+          <div class="cover ">
+            <h1 class="cover"><span>Basic</span><wbr></wbr><span>Move</span></h1>
+            <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">data class <a href="index.html">BasicMove</a>&lt;<a href="index.html">B</a> : <a href="../../../../boards/-board/index.html">Board</a>&lt;<a href="index.html">B</a>, <a href="index.html">MG</a>, <a href="index.html">P</a>, <a href="index.html">C</a>&gt;, <a href="index.html">MG</a> : <a href="../../../../moveGenerators/-move-generator/index.html">MoveGenerator</a>&lt;<a href="index.html">B</a>, <a href="index.html">MG</a>, <a href="index.html">P</a>, <a href="index.html">C</a>&gt;, <a href="index.html">P</a> : <a href="../../../../pieces/-piece/index.html">Piece</a>&lt;<a href="index.html">B</a>, <a href="index.html">MG</a>, <a href="index.html">P</a>, <a href="index.html">C</a>&gt;, <a href="index.html">C</a> : <a href="../../../../coordinates/-coordinate/index.html">Coordinate</a>&gt;(from: <a href="index.html">C</a>, to: <a href="index.html">C</a>, pieceMoved: <a href="index.html">P</a>, player: <a href="../../../../players/-player/index.html">Player</a>, pieceCaptured: <a href="index.html">P</a>?, pieceCapturedCoordinate: <a href="index.html">C</a>, piecePromotedTo: <a href="index.html">P</a>?, checkForCheck: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a>) : <a href="../index.html">Move.SimpleMove</a>&lt;<a href="index.html">B</a>, <a href="index.html">MG</a>, <a href="index.html">P</a>, <a href="index.html">C</a>&gt; <span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Basic Move</p></div></div>
+          </div>
+          <div class="tabbedcontent">
+            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+            <div class="tabs-section-body">
+              <h2 class="tabbedcontent">Constructors</h2>
+              <div class="table" data-togglable="Constructors"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FBasicMove%2F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%23players.Player%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FConstructors%2F1667983881" anchor-label="BasicMove" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FBasicMove%2F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%23players.Player%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FConstructors%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue TabbedContent">
+                    <div class=""><span class="inline-flex"><a href="-basic-move.html">BasicMove</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FBasicMove%2F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%23players.Player%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FConstructors%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">fun &lt;<a href="index.html">P</a> : <a href="../../../../pieces/-piece/index.html">Piece</a>&lt;<a href="index.html">B</a>, <a href="index.html">MG</a>, <a href="index.html">P</a>, <a href="index.html">C</a>&gt;, <a href="index.html">C</a> : <a href="../../../../coordinates/-coordinate/index.html">Coordinate</a>&gt; <a href="-basic-move.html">BasicMove</a>(from: <a href="index.html">C</a>, to: <a href="index.html">C</a>, pieceMoved: <a href="index.html">P</a>, player: <a href="../../../../players/-player/index.html">Player</a>, pieceCaptured: <a href="index.html">P</a>? = null, pieceCapturedCoordinate: <a href="index.html">C</a> = to, piecePromotedTo: <a href="index.html">P</a>? = null, checkForCheck: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = true)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Functions</h2>
+              <div class="table" data-togglable="Functions"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent1%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="component1" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent1%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="component1.html">component1</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent1%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">operator fun <a href="component1.html">component1</a>(): <a href="index.html">C</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent2%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="component2" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent2%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="component2.html">component2</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent2%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">operator fun <a href="component2.html">component2</a>(): <a href="index.html">C</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent3%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="component3" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent3%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="component3.html">component3</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent3%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">operator fun <a href="component3.html">component3</a>(): <a href="index.html">P</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent4%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="component4" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent4%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="component4.html">component4</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent4%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">operator fun <a href="component4.html">component4</a>(): <a href="../../../../players/-player/index.html">Player</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent5%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="component5" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent5%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="component5.html">component5</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent5%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">operator fun <a href="component5.html">component5</a>(): <a href="index.html">P</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent6%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="component6" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent6%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="component6.html">component6</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent6%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">operator fun <a href="component6.html">component6</a>(): <a href="index.html">C</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent7%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="component7" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent7%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="component7.html">component7</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent7%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">operator fun <a href="component7.html">component7</a>(): <a href="index.html">P</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent8%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="component8" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent8%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="component8.html">component8</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcomponent8%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">operator fun <a href="component8.html">component8</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcopy%2F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%23players.Player%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="copy" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcopy%2F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%23players.Player%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="copy.html">copy</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fcopy%2F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%23players.Player%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23TypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%23TypeParam%28bounds%3D%5Bpieces.Piece%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5B%5E%5E%2C%5E%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2CTypeParam%28bounds%3D%5BmoveGenerators.MoveGenerator%5BTypeParam%28bounds%3D%5Bboards.Board%5B%5E%5E%5E%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%5E%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%2C%5E%2CTypeParam%28bounds%3D%5Bcoordinates.Coordinate%5D%29%5D%5D%29%3F%23kotlin.Boolean%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">fun <a href="copy.html">copy</a>(from: <a href="index.html">C</a>, to: <a href="index.html">C</a>, pieceMoved: <a href="index.html">P</a>, player: <a href="../../../../players/-player/index.html">Player</a>, pieceCaptured: <a href="index.html">P</a>? = null, pieceCapturedCoordinate: <a href="index.html">C</a> = to, piecePromotedTo: <a href="index.html">P</a>? = null, checkForCheck: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = true): <a href="index.html">Move.SimpleMove.BasicMove</a>&lt;<a href="index.html">B</a>, <a href="index.html">MG</a>, <a href="index.html">P</a>, <a href="index.html">C</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="equals" id="%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../../../utils.notationFormatter/-notation-formatter/index.html#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881">equals</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">open operator override fun <a href="../../../../utils.notationFormatter/-notation-formatter/index.html#%5Bkotlin%2FAny%2Fequals%2F%23kotlin.Any%3F%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881">equals</a>(other: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>?): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="hashCode" id="%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../../../utils.notationFormatter/-notation-formatter/index.html#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881">hashCode</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">open override fun <a href="../../../../utils.notationFormatter/-notation-formatter/index.html#%5Bkotlin%2FAny%2FhashCode%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881">hashCode</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" anchor-label="toString" id="%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../../../utils.notationFormatter/-notation-formatter/index.html#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881">toString</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><div class="symbol monospace">open override fun <a href="../../../../utils.notationFormatter/-notation-formatter/index.html#%5Bkotlin%2FAny%2FtoString%2F%23%2FPointingToDeclaration%2F%5D%2FFunctions%2F1667983881">toString</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Properties</h2>
+              <div class="table" data-togglable="Properties"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FcheckForCheck%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="checkForCheck" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FcheckForCheck%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="check-for-check.html">checkForCheck</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FcheckForCheck%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FcheckForCheck%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="checkForCheck" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FcheckForCheck%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">open override val <a href="check-for-check.html">checkForCheck</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = true<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayFrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayFrom" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayFrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="display-from.html">displayFrom</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayFrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayFrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayFrom" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayFrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">open override val <a href="display-from.html">displayFrom</a>: <a href="index.html">C</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayPieceCaptured" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="display-piece-captured.html">displayPieceCaptured</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayPieceCaptured" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">open override var <a href="display-piece-captured.html">displayPieceCaptured</a>: <a href="index.html">P</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayPieceMoved" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="display-piece-moved.html">displayPieceMoved</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayPieceMoved" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">open override var <a href="display-piece-moved.html">displayPieceMoved</a>: <a href="index.html">P</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayPiecePromotedTo" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="display-piece-promoted-to.html">displayPiecePromotedTo</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayPiecePromotedTo" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayPiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">open override var <a href="display-piece-promoted-to.html">displayPiecePromotedTo</a>: <a href="index.html">P</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayTo" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="display-to.html">displayTo</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="displayTo" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FdisplayTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">open override var <a href="display-to.html">displayTo</a>: <a href="index.html">C</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Ffrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="from" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Ffrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="from.html">from</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Ffrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Ffrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="from" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Ffrom%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">val <a href="from.html">from</a>: <a href="index.html">C</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="pieceCaptured" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="piece-captured.html">pieceCaptured</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="pieceCaptured" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCaptured%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">val <a href="piece-captured.html">pieceCaptured</a>: <a href="index.html">P</a>? = null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCapturedCoordinate%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="pieceCapturedCoordinate" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCapturedCoordinate%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="piece-captured-coordinate.html">pieceCapturedCoordinate</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCapturedCoordinate%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCapturedCoordinate%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="pieceCapturedCoordinate" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceCapturedCoordinate%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">val <a href="piece-captured-coordinate.html">pieceCapturedCoordinate</a>: <a href="index.html">C</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="pieceMoved" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="piece-moved.html">pieceMoved</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="pieceMoved" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpieceMoved%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">val <a href="piece-moved.html">pieceMoved</a>: <a href="index.html">P</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="piecePromotedTo" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="piece-promoted-to.html">piecePromotedTo</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="piecePromotedTo" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2FpiecePromotedTo%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">val <a href="piece-promoted-to.html">piecePromotedTo</a>: <a href="index.html">P</a>? = null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fplayer%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="player" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fplayer%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="player.html">player</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fplayer%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fplayer%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="player" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fplayer%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">open override val <a href="player.html">player</a>: <a href="../../../../players/-player/index.html">Player</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fto%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="to" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fto%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a>
+                <div class="table-row" data-filterable-current=":engine:dokkaHtml/main" data-filterable-set=":engine:dokkaHtml/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="to.html">to</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fto%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":engine:dokkaHtml/main"><a data-name="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fto%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" anchor-label="to" id="%5Bmoves%2FMove.SimpleMove.BasicMove%2Fto%2F%23%2FPointingToDeclaration%2F%5D%2FProperties%2F1667983881" data-filterable-set=":engine:dokkaHtml/main"></a><div class="symbol monospace">val <a href="to.html">to</a>: <a href="index.html">C</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#content"></a></span><span>© 2020 Copyright</span><span class="pull-right"><span>Sponsored and developed by dokka</span><a href="https://github.com/Kotlin/dokka"><span class="padded-icon"></span></a></span></div>
+      </div>
+    </div>
+  </body>
+</html>
+
