@@ -140,7 +140,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Initialise the game variant</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new End Condition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finaliseGame.html">Completing the Game</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
@@ -228,8 +228,8 @@
   <div class="section" id="initialise-the-game-variant">
 <h1>Initialise the game variant<a class="headerlink" href="#initialise-the-game-variant" title="Permalink to this headline">¶</a></h1>
 <p>In the tutorials package you have created, create a file called TutorialChess.kt
-Create an open class called “TutorialChess” that implements the AbstractChess interface. We will initialise the board and implement initBoard in the next step.</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">open</span> <span class="k">class</span> <span class="nc">TutorialChess</span> <span class="p">:</span> <span class="n">AbstractChess</span><span class="p">(</span>
+Create an open class called “TutorialChess” that implements the AbstractChess2D interface. We will initialise the board and implement initBoard in the next step.</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">open</span> <span class="k">class</span> <span class="nc">TutorialChess</span> <span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">(</span>
                                   <span class="n">listOf</span><span class="p">(),</span>
                                   <span class="n">listOf</span><span class="p">()</span>
 <span class="p">{</span>
@@ -242,7 +242,7 @@ Create an open class called “TutorialChess” that implements the AbstractChes
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Leave the parameters for AbstractChess as empty lists for now - These parameters will later be the special rules and win conditions for our variant.</p>
+<p>Leave the parameters for AbstractChess2D as empty lists for now - These parameters will later be the special rules and win conditions for our variant.</p>
 </div>
 
 

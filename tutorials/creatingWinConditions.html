@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Creating the new Win Condition &mdash; Coding Chess Variants Docs</title>
+  <title>Creating the new End Condition &mdash; Coding Chess Variants Docs</title>
   
 
   
@@ -140,7 +140,7 @@
 <li class="toctree-l1"><a class="reference internal" href="initGame.html">Initialise the game variant</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating the new Win Condition</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating the new End Condition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finaliseGame.html">Completing the Game</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
@@ -195,7 +195,7 @@
       </li>
 
         
-      <li>Creating the new Win Condition</li>
+      <li>Creating the new End Condition</li>
     
     
       <li class="catalyst-breadcrumbs-aside">
@@ -225,10 +225,10 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="catalyst-article" class="catalyst-article">
               
-  <div class="section" id="creating-the-new-win-condition">
-<h1>Creating the new Win Condition<a class="headerlink" href="#creating-the-new-win-condition" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="creating-the-new-end-condition">
+<h1>Creating the new End Condition<a class="headerlink" href="#creating-the-new-end-condition" title="Permalink to this headline">¶</a></h1>
 <dl class="simple">
-<dt>The win conditions for this chess variant are:</dt><dd><ul class="simple">
+<dt>The end conditions for this chess variant are:</dt><dd><ul class="simple">
 <li><p>A player wins once by taking all the opponent pawns</p></li>
 <li><p>A player wins by checkmating the opponent’s king.</p></li>
 <li><p>Stalemate by no moves for a player not in checkmate</p></li>
@@ -236,19 +236,19 @@
 </ul>
 </dd>
 </dl>
-<p>The first is a new win condition specific to this variant which we will implement here, and the remaining three are pre-existing standard win conditions.</p>
+<p>The first is a new end condition specific to this variant which we will implement here, and the remaining three are pre-existing standard end conditions.</p>
 <div class="section" id="step-1-create-a-new-file">
 <h2>Step 1: Create a new file<a class="headerlink" href="#step-1-create-a-new-file" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Create a new file called “AllPawnsCapturedWinCondition.kt” in the Tutorial package.</p></li>
-<li><p>Create a class called AllPawnsCapturedWinCondition which implements the WinCondition2D&lt;AbstractChess&gt; interface</p></li>
+<li><p>Create a new file called “AllPawnsCapturedEndCondition.kt” in the Tutorial package.</p></li>
+<li><p>Create a class called AllPawnsCapturedEndCondition which implements the EndCondition2D&lt;AbstractChess&gt; interface</p></li>
 </ol>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
 
-<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
-<span class="k">import</span> <span class="nn">winconditions.WinCondition2D</span>
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess2D</span>
+<span class="k">import</span> <span class="nn">winconditions.EndCondition2D</span>
 
-<span class="k">class</span> <span class="nc">AllPawnsCapturedWinCondition</span> <span class="p">:</span> <span class="n">WinCondition2D</span><span class="p">&lt;</span><span class="n">AbstractChess</span><span class="p">&gt;</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">AllPawnsCapturedEndCondition</span> <span class="p">:</span> <span class="n">EndCondition2D</span><span class="p">&lt;</span><span class="n">AbstractChess2D</span><span class="p">&gt;</span> <span class="p">{</span>
   <span class="c1">// Leave this empty for now.</span>
 <span class="p">}</span>
 </pre></div>
@@ -257,7 +257,7 @@
 <div class="section" id="step-3-implement-the-evaluate-method">
 <h2>Step 3: Implement the evaluate method<a class="headerlink" href="#step-3-implement-the-evaluate-method" title="Permalink to this headline">¶</a></h2>
 <p>Now we implement the evaluate method. We want to return a win outcome for the other player if the player being evaluated has lost all their pawns, and null otherwise.</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
   <span class="n">TODO</span><span class="p">()</span>
 <span class="p">}</span>
 </pre></div>
@@ -268,7 +268,7 @@
 </div>
 <p>This returns true if the player still has pawns. getPieces(player) returns a list of pairs of pieces to coordinates which is why we do a .first on the piece.</p>
 <p>If this expression is false, then we must return a win outcome for the other player</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(!</span><span class="n">game</span><span class="p">.</span><span class="n">board</span><span class="p">.</span><span class="n">getPieces</span><span class="p">(</span><span class="n">player</span><span class="p">).</span><span class="n">any</span> <span class="p">{</span> <span class="n">piece</span> <span class="p">-&gt;</span> <span class="n">piece</span><span class="p">.</span><span class="n">first</span> <span class="k">is</span> <span class="n">Pawn</span> <span class="p">})</span> <span class="p">{</span>
     <span class="k">return</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Win</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">getOpponentPlayer</span><span class="p">(</span><span class="n">player</span><span class="p">),</span> <span class="s">&quot;by opponent losing all pawns&quot;</span><span class="p">)</span>
   <span class="p">}</span>
@@ -282,7 +282,7 @@
 </ul>
 </dd>
 </dl>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
   <span class="k">for</span> <span class="p">(</span><span class="n">p</span> <span class="k">in</span> <span class="n">game</span><span class="p">.</span><span class="n">players</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(!</span><span class="n">game</span><span class="p">.</span><span class="n">board</span><span class="p">.</span><span class="n">getPieces</span><span class="p">(</span><span class="n">p</span><span class="p">).</span><span class="n">any</span> <span class="p">{</span> <span class="n">piece</span> <span class="p">-&gt;</span> <span class="n">piece</span><span class="p">.</span><span class="n">first</span> <span class="k">is</span> <span class="n">Pawn</span> <span class="p">})</span> <span class="p">{</span>
       <span class="k">return</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Win</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">getOpponentPlayer</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="s">&quot;by opponent losing all pawns&quot;</span><span class="p">)</span>
@@ -292,34 +292,28 @@
 </pre></div>
 </div>
 <p>If the condition is not satisfied for either player, we return null. This gives us the final evaluate function.</p>
-<p>..code-block:: kotlin</p>
-<blockquote>
-<div><dl>
-<dt>override fun evaluate(game: AbstractChess, player: Player, moves: List&lt;Move2D&gt;): Outcome? {</dt><dd><dl>
-<dt>for (p in game.players) {</dt><dd><dl class="simple">
-<dt>if (!game.board.getPieces(p).any { piece -&gt; piece.first is Pawn }) {</dt><dd><p>return Outcome.Win(game.getOpponentPlayer(p), “by opponent losing all pawns”)</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
-<p>}</p>
-<p>return null</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">p</span> <span class="k">in</span> <span class="n">game</span><span class="p">.</span><span class="n">players</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">game</span><span class="p">.</span><span class="n">board</span><span class="p">.</span><span class="n">getPieces</span><span class="p">(</span><span class="n">p</span><span class="p">).</span><span class="n">any</span> <span class="p">{</span> <span class="n">piece</span> <span class="p">-&gt;</span> <span class="n">piece</span><span class="p">.</span><span class="n">first</span> <span class="k">is</span> <span class="n">Pawn</span> <span class="p">})</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Win</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">getOpponentPlayer</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="s">&quot;by opponent losing all pawns&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="k">null</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="step-4-overall-class">
 <h2>Step 4: Overall class<a class="headerlink" href="#step-4-overall-class" title="Permalink to this headline">¶</a></h2>
 <p>The class should now look like this:</p>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
 
-<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
-<span class="k">import</span> <span class="nn">winconditions.WinCondition2D</span>
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstracAbstractChess2DtChess</span>
+<span class="k">import</span> <span class="nn">winconditions.EndCondition2D</span>
 
-<span class="k">class</span> <span class="nc">AllPawnsCapturedWinCondition</span> <span class="p">:</span> <span class="n">WinCondition2D</span><span class="p">&lt;</span><span class="n">AbstractChess</span><span class="p">&gt;</span> <span class="p">{</span>
-  <span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">AllPawnsCapturedEndCondition</span> <span class="p">:</span> <span class="n">EndCondition2D</span><span class="p">&lt;</span><span class="n">AbstractChess2D</span><span class="p">&gt;</span> <span class="p">{</span>
+  <span class="k">override</span> <span class="k">fun</span> <span class="nf">evaluate</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;):</span> <span class="n">Outcome</span><span class="p">?</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">p</span> <span class="k">in</span> <span class="n">game</span><span class="p">.</span><span class="n">players</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(!</span><span class="n">game</span><span class="p">.</span><span class="n">board</span><span class="p">.</span><span class="n">getPieces</span><span class="p">(</span><span class="n">p</span><span class="p">).</span><span class="n">any</span> <span class="p">{</span> <span class="n">piece</span> <span class="p">-&gt;</span> <span class="n">piece</span><span class="p">.</span><span class="n">first</span> <span class="k">is</span> <span class="n">Pawn</span> <span class="p">})</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">Outcome</span><span class="p">.</span><span class="n">Win</span><span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">getOpponentPlayer</span><span class="p">(</span><span class="n">p</span><span class="p">),</span> <span class="s">&quot;by opponent losing all pawns&quot;</span><span class="p">)</span>
@@ -373,7 +367,7 @@
           <div class="catalyst-right-menu" id="catalyst-right-menu">
             <div class="catalyst-side-scroll" id="catalyst-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Creating the new Win Condition</a><ul>
+<li><a class="reference internal" href="#">Creating the new End Condition</a><ul>
 <li><a class="reference internal" href="#step-1-create-a-new-file">Step 1: Create a new file</a></li>
 <li><a class="reference internal" href="#step-3-implement-the-evaluate-method">Step 3: Implement the evaluate method</a></li>
 <li><a class="reference internal" href="#step-4-overall-class">Step 4: Overall class</a></li>

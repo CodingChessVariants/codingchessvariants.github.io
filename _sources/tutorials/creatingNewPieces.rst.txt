@@ -59,6 +59,3 @@ Create a file called Alfil.kt:
     style="width: 501px; height: 269px; border:0; transform: scale(1); overflow:hidden;"
     sandbox="allow-scripts allow-same-origin">
   </iframe>
-
-
-The Alfil is a 

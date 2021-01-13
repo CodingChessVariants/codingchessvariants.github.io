@@ -29,7 +29,7 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating the new Win Condition" href="creatingWinConditions.html" />
+    <link rel="next" title="Creating the new End Condition" href="creatingWinConditions.html" />
     <link rel="prev" title="Set up Board" href="creatingBoards.html" /> 
 
   
@@ -140,7 +140,7 @@
 <li class="toctree-l1"><a class="reference internal" href="initGame.html">Initialise the game variant</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingBoards.html">Set up Board</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new End Condition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finaliseGame.html">Completing the Game</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
@@ -238,13 +238,13 @@ In this case, we are restricting the moves a player can make by removing the mov
 </ol>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
 
-<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess2D</span>
 <span class="k">import</span> <span class="nn">moves.Move2D</span>
 <span class="k">import</span> <span class="nn">players.Player</span>
 <span class="k">import</span> <span class="nn">rules.SpecialRules2D</span>
 
-<span class="k">class</span> <span class="nc">NoRepeatedMoveFromSamePieceRule</span><span class="p">()</span> <span class="p">:</span> <span class="n">SpecialRules2D</span><span class="p">&lt;</span><span class="n">AbstractChess</span><span class="p">&gt;</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">NoRepeatedMoveFromSamePieceRule</span><span class="p">()</span> <span class="p">:</span> <span class="n">SpecialRules2D</span><span class="p">&lt;</span><span class="n">AbstractChess2D</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
         <span class="n">TODO</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -259,7 +259,7 @@ We can get the move the player previously made like so:</p>
 </pre></div>
 </div>
 <p>This means we can easily remove the moves where the same piece is moved like so:</p>
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;=</span> <span class="m">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span>
     <span class="p">}</span>
@@ -274,13 +274,13 @@ We can get the move the player previously made like so:</p>
 <p>The NoRepeatedMoveFromSamePieceRule class should now look like this.</p>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
 
-<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess2D</span>
 <span class="k">import</span> <span class="nn">moves.Move2D</span>
 <span class="k">import</span> <span class="nn">players.Player</span>
 <span class="k">import</span> <span class="nn">rules.SpecialRules2D</span>
 
-<span class="k">class</span> <span class="nc">NoRepeatedMoveFromSamePieceRule</span><span class="p">()</span> <span class="p">:</span> <span class="n">SpecialRules2D</span><span class="p">&lt;</span><span class="n">AbstractChess</span><span class="p">&gt;</span> <span class="p">{</span>
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">NoRepeatedMoveFromSamePieceRule</span><span class="p">()</span> <span class="p">:</span> <span class="n">SpecialRules2D</span><span class="p">&lt;</span><span class="n">AbstractChess2D</span><span class="p">&gt;</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getPossibleMoves</span><span class="p">(</span><span class="n">game</span><span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">,</span> <span class="n">player</span><span class="p">:</span> <span class="n">Player</span><span class="p">,</span> <span class="n">moves</span><span class="p">:</span> <span class="n">MutableList</span><span class="p">&lt;</span><span class="n">Move2D</span><span class="p">&gt;)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">game</span><span class="p">.</span><span class="n">moveLog</span><span class="p">.</span><span class="n">size</span> <span class="p">&lt;</span> <span class="m">2</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span>
         <span class="p">}</span>
@@ -302,7 +302,7 @@ We can get the move the player previously made like so:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="creatingWinConditions.html" class="btn btn-neutral float-right" title="Creating the new Win Condition" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="creatingWinConditions.html" class="btn btn-neutral float-right" title="Creating the new End Condition" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
         <a href="creatingBoards.html" class="btn btn-neutral" title="Set up Board" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>

@@ -140,7 +140,7 @@
 <li class="toctree-l1"><a class="reference internal" href="initGame.html">Initialise the game variant</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Set up Board</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creatingRules.html">Creating Special Rules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new Win Condition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creatingWinConditions.html">Creating the new End Condition</a></li>
 <li class="toctree-l1"><a class="reference internal" href="finaliseGame.html">Completing the Game</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrateIntoExampleFrontend.html">Integrating Into a Frontend</a></li>
 </ul>
@@ -231,8 +231,9 @@
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">package</span> <span class="nn">tutorial</span>
 
 <span class="k">import</span> <span class="nn">boards.Board2D</span>
-<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess</span>
-<span class="k">open</span> <span class="k">class</span> <span class="nc">TutorialChess</span> <span class="p">:</span> <span class="n">AbstractChess</span><span class="p">(</span>
+<span class="k">import</span> <span class="nn">gameTypes.chess.AbstractChess2D</span>
+
+<span class="k">open</span> <span class="k">class</span> <span class="nc">TutorialChess</span> <span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">(</span>
                                   <span class="n">listOf</span><span class="p">(),</span>
                                   <span class="n">listOf</span><span class="p">()</span>
 <span class="p">{</span>
@@ -284,31 +285,21 @@ Put each player into a variable for ease of use.</p>
 </div>
 <div class="section" id="adding-the-backline-pieces">
 <h3>2. Adding the backline pieces<a class="headerlink" href="#adding-the-backline-pieces" title="Permalink to this headline">¶</a></h3>
-<p>The rest of the pieces can be added like so.</p>
+<p>The rest of the pieces can be added using FEN notation using the
+FEN chess notation.</p>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">rbakbar</span><span class="p">/</span><span class="n">ppppppp</span><span class="p">/</span><span class="m">7</span><span class="p">/</span><span class="m">7</span><span class="p">/</span><span class="m">7</span><span class="p">/</span><span class="n">PPPPPPP</span><span class="p">/</span><span class="n">RBAKBAR</span>
+</pre></div>
+</div>
+<p>This represents the inital positions of pieces in this variant.
+As the Berlin pawn and Alfil are fairy pieces, we must add them to the FEN mapping.</p>
+<p>We then initialise the board using FEN notation.</p>
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="k">override</span> <span class="k">fun</span> <span class="nf">initBoard</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
-  <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
-  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="m">6</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">BerlinWhitePawn</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-      <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="n">BerlinBlackPawn</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-  <span class="p">}</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+  <span class="k">val</span> <span class="py">fen</span> <span class="p">=</span> <span class="n">FenUtility</span><span class="p">(</span><span class="s">&quot;rbakbar/ppppppp/7/7/7/PPPPPPP/RBAKBAR&quot;</span><span class="p">)</span>
 
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+  <span class="n">fen</span><span class="p">.</span><span class="n">extendFenPieces</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="o">::</span><span class="n">Alfil</span><span class="p">)</span>
+  <span class="n">fen</span><span class="p">.</span><span class="n">extendFenPiecesCaseSensitive</span><span class="p">(</span><span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="o">::</span><span class="n">BerlinWhitePawn</span><span class="p">,</span> <span class="o">::</span><span class="n">BerlinBlackPawn</span><span class="p">)</span>
 
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">King</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-  <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">King</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+  <span class="n">fen</span><span class="p">.</span><span class="n">initBoardWithFEN</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">],</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">])</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -324,7 +315,7 @@ Put each player into a variable for ease of use.</p>
 <span class="k">import</span> <span class="nn">pieces.chess.*</span>
 <span class="k">import</span> <span class="nn">regions.CoordinateRegion</span>
 
-<span class="k">open</span> <span class="k">class</span> <span class="nc">TutorialChess</span> <span class="p">:</span> <span class="n">AbstractChess</span><span class="p">(</span>
+<span class="k">open</span> <span class="k">class</span> <span class="nc">TutorialChess</span> <span class="p">:</span> <span class="n">AbstractChess2D</span><span class="p">(</span>
                                   <span class="n">listOf</span><span class="p">(),</span>
                                   <span class="n">listOf</span><span class="p">()</span>
 <span class="p">{</span>
@@ -332,31 +323,14 @@ Put each player into a variable for ease of use.</p>
     <span class="k">override</span> <span class="k">val</span> <span class="py">board</span><span class="p">:</span> <span class="n">Board2D</span> <span class="p">=</span> <span class="n">Board2D</span><span class="p">(</span><span class="m">7</span><span class="p">,</span> <span class="m">7</span><span class="p">,</span> <span class="n">outOfBoundsRegion</span><span class="p">)</span>
     <span class="k">override</span> <span class="k">val</span> <span class="py">name</span> <span class="p">=</span> <span class="s">&quot;Tutorial Chess&quot;</span>
 
-    <span class="k">override</span> <span class="k">fun</span> <span class="nf">initBoard</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">val</span> <span class="py">player1</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">]</span>
-        <span class="k">val</span> <span class="py">player2</span> <span class="p">=</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="k">in</span> <span class="m">0.</span><span class="p">.</span><span class="m">6</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">1</span><span class="p">),</span> <span class="n">BerlinWhitePawn</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-            <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="m">5</span><span class="p">),</span> <span class="n">BerlinBlackPawn</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-        <span class="p">}</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Rook</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+      <span class="k">override</span> <span class="k">fun</span> <span class="nf">initBoard</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">val</span> <span class="py">fen</span> <span class="p">=</span> <span class="n">FenUtility</span><span class="p">(</span><span class="s">&quot;rbakbar/ppppppp/7/7/7/PPPPPPP/RBAKBAR&quot;</span><span class="p">)</span>
 
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">4</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Bishop</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+        <span class="n">fen</span><span class="p">.</span><span class="n">extendFenPieces</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="o">::</span><span class="n">Alfil</span><span class="p">)</span>
+        <span class="n">fen</span><span class="p">.</span><span class="n">extendFenPiecesCaseSensitive</span><span class="p">(</span><span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="o">::</span><span class="n">BerlinWhitePawn</span><span class="p">,</span> <span class="o">::</span><span class="n">BerlinBlackPawn</span><span class="p">)</span>
 
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">Alfil</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="n">King</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
-        <span class="n">board</span><span class="p">.</span><span class="n">addPiece</span><span class="p">(</span><span class="n">Coordinate2D</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">King</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
-    <span class="p">}</span>
+        <span class="n">fen</span><span class="p">.</span><span class="n">initBoardWithFEN</span><span class="p">(</span><span class="n">board</span><span class="p">,</span> <span class="n">players</span><span class="p">[</span><span class="m">0</span><span class="p">],</span> <span class="n">players</span><span class="p">[</span><span class="m">1</span><span class="p">])</span>
+      <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>

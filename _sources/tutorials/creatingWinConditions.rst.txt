@@ -1,28 +1,28 @@
 **********************************
-Creating the new Win Condition
+Creating the new End Condition
 **********************************
 
-The win conditions for this chess variant are:
+The end conditions for this chess variant are:
   - A player wins once by taking all the opponent pawns
   - A player wins by checkmating the opponent's king.
   - Stalemate by no moves for a player not in checkmate
   - Stalemate by threefold repetition
 
-The first is a new win condition specific to this variant which we will implement here, and the remaining three are pre-existing standard win conditions.
+The first is a new end condition specific to this variant which we will implement here, and the remaining three are pre-existing standard end conditions.
 
 Step 1: Create a new file
 ----------------------------
-1. Create a new file called "AllPawnsCapturedWinCondition.kt" in the Tutorial package.
-2. Create a class called AllPawnsCapturedWinCondition which implements the WinCondition2D<AbstractChess> interface
+1. Create a new file called "AllPawnsCapturedEndCondition.kt" in the Tutorial package.
+2. Create a class called AllPawnsCapturedEndCondition which implements the EndCondition2D<AbstractChess> interface
 
 .. code-block:: kotlin 
 
   package tutorial
 
-  import gameTypes.chess.AbstractChess
-  import winconditions.WinCondition2D
+  import gameTypes.chess.AbstractChess2D
+  import winconditions.EndCondition2D
 
-  class AllPawnsCapturedWinCondition : WinCondition2D<AbstractChess> {
+  class AllPawnsCapturedEndCondition : EndCondition2D<AbstractChess2D> {
     // Leave this empty for now.
   }
 
@@ -32,7 +32,7 @@ Now we implement the evaluate method. We want to return a win outcome for the ot
 
 .. code-block:: kotlin
 
-  override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
+  override fun evaluate(game: AbstractChess2D, player: Player, moves: List<Move2D>): Outcome? {
     TODO()
   }
 
@@ -48,7 +48,7 @@ If this expression is false, then we must return a win outcome for the other pla
 
 .. code-block:: kotlin
 
-  override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
+  override fun evaluate(game: AbstractChess2D, player: Player, moves: List<Move2D>): Outcome? {
     if (!game.board.getPieces(player).any { piece -> piece.first is Pawn }) {
       return Outcome.Win(game.getOpponentPlayer(player), "by opponent losing all pawns")
     }
@@ -60,7 +60,7 @@ We need to check both players as:
 
 .. code-block:: kotlin
 
-  override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
+  override fun evaluate(game: AbstractChess2D, player: Player, moves: List<Move2D>): Outcome? {
     for (p in game.players) {
       if (!game.board.getPieces(p).any { piece -> piece.first is Pawn }) {
         return Outcome.Win(game.getOpponentPlayer(p), "by opponent losing all pawns")
@@ -70,9 +70,9 @@ We need to check both players as:
 
 If the condition is not satisfied for either player, we return null. This gives us the final evaluate function. 
 
-..code-block:: kotlin
+.. code-block:: kotlin
 
-  override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
+  override fun evaluate(game: AbstractChess2D, player: Player, moves: List<Move2D>): Outcome? {
     for (p in game.players) {
       if (!game.board.getPieces(p).any { piece -> piece.first is Pawn }) {
         return Outcome.Win(game.getOpponentPlayer(p), "by opponent losing all pawns")
@@ -90,11 +90,11 @@ The class should now look like this:
 
   package tutorial
 
-  import gameTypes.chess.AbstractChess
-  import winconditions.WinCondition2D
+  import gameTypes.chess.AbstracAbstractChess2DtChess
+  import winconditions.EndCondition2D
 
-  class AllPawnsCapturedWinCondition : WinCondition2D<AbstractChess> {
-    override fun evaluate(game: AbstractChess, player: Player, moves: List<Move2D>): Outcome? {
+  class AllPawnsCapturedEndCondition : EndCondition2D<AbstractChess2D> {
+    override fun evaluate(game: AbstractChess2D, player: Player, moves: List<Move2D>): Outcome? {
       for (p in game.players) {
         if (!game.board.getPieces(p).any { piece -> piece.first is Pawn }) {
           return Outcome.Win(game.getOpponentPlayer(p), "by opponent losing all pawns")
